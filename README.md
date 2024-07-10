@@ -21,5 +21,7 @@
 		<td><b>총 기간</b></td>		<td colspan="2">6/28 - 12/30</td>		<td>1000h</td></tr>
 	</tbody>
 </table>
+[![Solved.ac
+프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=wke1wke1)](https://solved.ac/under912)
 <hr>
 
