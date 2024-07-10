@@ -24,9 +24,9 @@
 <hr>
 <p align="center">
 	<a>
-		<img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=flat&logo=eclipse&logoColor=white">
-		<img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white">
-		<img src="https://img.shields.io/badge/git-E44C30?style=flat&logo=git&logoColor=white">
+		<img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=for-the-badge&logo=eclipse&logoColor=white">
+		<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
+		<img src="https://img.shields.io/badge/git-E44C30?style=for-the-badge&logo=git&logoColor=white">
 	</a>
 </p>
 <p align="center">
