@@ -22,13 +22,16 @@
 	</tbody>
 </table>
 <hr>
-<p align="center">
+<div border="1px solid black">
+	<p align="center">
 	<a>
-		<img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=for-the-badge&logo=eclipse&logoColor=white">
-		<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
-		<img src="https://img.shields.io/badge/git-E44C30?style=for-the-badge&logo=git&logoColor=white">
+		<picture><img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=flat&logo=eclipse&logoColor=white"></picture>
+		<picture><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"></picture>
+		<picture><img src="https://img.shields.io/badge/git-E44C30?style=flat&logo=git&logoColor=white"></picture>
 	</a>
-</p>
+	</p>
+</div>
+<hr>
 <p align="center">
 	<a href="https://solved.ac/under912">
 		<img alt="Solved.ac 프로필" src="http://mazassumnida.wtf/api/mini/generate_badge?boj=under912">
