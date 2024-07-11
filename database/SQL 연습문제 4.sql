@@ -156,7 +156,7 @@ limit 1;
 
 # 실습 4-19. 각 영화의 장르별로 개봉일이 가장 최근인 영화의 제목을 조회하시오.
 select
-`genre`, `title`, `release_date`
+	`genre`, `title`, `release_date`
 from `Movies`
 where (`genre`, `release_date`) in (
 	select `genre`, MAX(`release_date`)
@@ -205,15 +205,14 @@ group by `name`;
 # 실습 4-25. 예매 티켓 수가 가장 많은 고객의 아이디와 이름, 이메일을 조회하시오.
 SET SESSIon sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_in_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISIon_BY_ZERO,NO_ENGinE_SUBSTITUTIon';
 select
-c.`customer_id`,
-c.`name`,
-c.`email`,
-SUM(b.`num_tickets`) as `예매 티켓수`
+	c.`customer_id`,
+	c.`name`,
+	c.`email`,
+	SUM(b.`num_tickets`) as `예매 티켓수`
 from `Bookings` b
 join `Customers` c on b.`customer_id` = c.`customer_id`
 group by `name`
 order by `예매 티켓수` desc;
-
 
 # 실습 4-26. 예매된 티켓 수가 가장 큰 순서로 고객명, 영화제목, 예매 티켓수, 예매일을 조회하시오.
 select
@@ -228,10 +227,10 @@ order by `num_tickets` desc;
 
 # 실습 4-27. 장르가 '액션'이고 평균 예매 티켓 수가 가장 높은 순으로 영화의 제목을 조회하시오.
 select
-M.`title`,
-M.`genre`,
-SUM(B.`num_tickets`) as `예매 티켓 수`,
-AVG(B.`num_tickets`) as `평균 티켓 수`
+	M.`title`,
+	M.`genre`,
+	SUM(B.`num_tickets`) as `예매 티켓 수`,
+	AVG(B.`num_tickets`) as `평균 티켓 수`
 from `Bookings` B
 join `Movies` M on B.`movie_id` = M.`movie_id`
 where M.`genre` = '액션'
@@ -240,9 +239,9 @@ order by `평균 티켓 수` desc;
 
 # 실습 4-28. 회원별 예매 티켓 수가 큰 순서로 고객아이디, 고객명, 티켓 총합 조회하시오.
 select
-B.`customer_id`,
-C.`name`,
-SUM(`num_tickets`) as `ticket_total`
+	B.`customer_id`,
+	C.`name`,
+	SUM(`num_tickets`) as `ticket_total`
 from `Bookings` B
 join `Customers` C on B.`customer_id` = C.`customer_id`
 group by `name`
