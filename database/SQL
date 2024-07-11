@@ -1,8 +1,0 @@
-# 날짜 : 2024 / 07 /10
-# 이름 : 김주경
-# 내용 : SQL 연습문제 3
-
-create database `College`;
-create user 'college'@'%' identified by '1234';
-grant all privileges on College.* to 'college'@'%';
-flush privileges;
