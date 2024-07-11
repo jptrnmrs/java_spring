@@ -1,7 +1,32 @@
-## Index
 
 
-<table align="center">
+<div class=box>
+	<p align="center">
+	<a>
+		<picture><img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=flat&logo=eclipse&logoColor=white"></picture>
+		<picture><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"></picture>
+		<picture><img src="https://img.shields.io/badge/git-E44C30?style=flat&logo=git&logoColor=white"></picture>
+	</a>
+	</p>
+</div>
+<p align="center">
+	<a href="https://solved.ac/under912">
+		<img alt="Solved.ac 프로필" src="http://mazassumnida.wtf/api/mini/generate_badge?boj=under912">
+	</a>
+	<a href="https://hammerhead-debt-126.notion.site/Study-0ceb05a8261e4e22b7c82a328fffa28e">
+		<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white">
+	</a>
+</p>
+<p align="center">
+	<a href="https://github.com/anuraghazra/github-readme-stats">
+	<img alt=""Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jptrnmrs&exclude_repo=html&layout=compact">
+	</a>
+</p>
+<details align="center">
+	<summary>Schedule</summary>
+  	<div>
+		<br><br>
+	<table align="center">
 	<thead><tr>
 		<th>교과구분</th>	      	<th colspan="2">과목</th>			<th>시수</th></tr>
 	</thead>
@@ -20,29 +45,7 @@
 		<td>기타</td>			<td colspan="2">OT+세미나+특강</td>		<td>16h</td></tr><tr></tr><td colspan="4"> </td><tr>
 		<td><b>총 기간</b></td>		<td colspan="2">6/28 - 12/30</td>		<td>1000h</td></tr>
 	</tbody>
-</table>
-<hr>
-<div border="1px solid black">
-	<p align="center">
-	<a>
-		<picture><img src="https://img.shields.io/badge/eclipseIDE-2C2255?style=flat&logo=eclipse&logoColor=white"></picture>
-		<picture><img src="https://img.shields.io/badge/mysql-4479A1?style=flat&logo=mysql&logoColor=white"></picture>
-		<picture><img src="https://img.shields.io/badge/git-E44C30?style=flat&logo=git&logoColor=white"></picture>
-	</a>
-	</p>
-</div>
-<hr>
-<p align="center">
-	<a href="https://solved.ac/under912">
-		<img alt="Solved.ac 프로필" src="http://mazassumnida.wtf/api/mini/generate_badge?boj=under912">
-	</a>
-	<a href="https://hammerhead-debt-126.notion.site/Study-0ceb05a8261e4e22b7c82a328fffa28e">
-		<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white">
-	</a>
-</p>
-<p align="center">
-	<a href="https://github.com/anuraghazra/github-readme-stats">
-	<img alt=""Top Langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jptrnmrs&exclude_repo=html&layout=compact">
-	</a>
-</p>
+	</table>
+  	</div>
+</details>
 
