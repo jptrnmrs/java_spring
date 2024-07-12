@@ -2,8 +2,9 @@ sample.txt
 temp/
 *.log
 .metadata
-.classpath
-.project
-.settings
+*.classpath
+*.project
+.settings/
 bin/
-.gitignore
+.gitignore.txt
+*.prefs
