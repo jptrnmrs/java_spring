@@ -14,7 +14,7 @@
 		<img alt="Solved.ac 프로필" src="http://mazassumnida.wtf/api/mini/generate_badge?boj=under912">
 	</a>
 	<a href="https://hammerhead-debt-126.notion.site/Study-0ceb05a8261e4e22b7c82a328fffa28e">
-		<img src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white">
+		<img src="https://img.shields.io/badge/ProgressNotion-000000?style=flat&logo=notion&logoColor=white">
 	</a>
 </p>
 <p align="center">
