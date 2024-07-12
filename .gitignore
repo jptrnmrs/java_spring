@@ -2,4 +2,7 @@ sample.txt
 temp/
 *.log
 .metadata
-
+.classpath
+.project
+.settings
+bin
