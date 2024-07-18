@@ -13,8 +13,13 @@ import sub1.Apple;
 public class ArrayListTest {
 	public static void main(String[] args) {
 		
-		// ArrayList 생성
+		//////////////////////////////////////////////////
+		// ArrayList 기본
+		///////////////////////////////////////////////////
 		List<Integer> list = new ArrayList<>();
+		//int[] arr = new int[5];
+		
+		// 데이터 저장
 		list.add(1);
 		list.add(2);
 		list.add(3);
@@ -48,7 +53,9 @@ public class ArrayListTest {
 		System.out.println();
 		
 		
-		// 
+		///////////////////////////////////////////////////
+		// 문자열 리스트 연습
+		///////////////////////////////////////////////////
 		List<String> people = new ArrayList<String>();
 		
 		people.add("김유신");

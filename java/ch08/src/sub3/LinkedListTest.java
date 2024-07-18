@@ -12,7 +12,7 @@ public class LinkedListTest {
 	public static void main(String[] args) {
 		
 		// LinkedList 생성
-		List<String> cities = new LinkedList<>();
+		LinkedList<String> cities = new LinkedList<>();
 		cities.add("서울");
 		cities.add("대전");
 		cities.add("대구");
@@ -20,5 +20,15 @@ public class LinkedListTest {
 		cities.add("광주");
 		
 		System.out.println(cities);
+		
+		cities.add(1, "수원");
+		System.out.println(cities);
+		
+		cities.addFirst("인천");
+		System.out.println(cities);
+		
+		cities.addLast("울산");
+		System.out.println(cities);
+		
 	}
 }
