@@ -1,9 +1,5 @@
 package ch05.sec07;
-/*
- * 장제목 : 5장 new 연산자로 다차원 배열 생성
- * 이름 : 최형욱
- * 작성일 : 2024.01.05
- */
+
 public class MultidimensionalArrayByNewExample {
 	public static void main(String[] args) {
 		//각 반의 학생 수가 3명으로 동일할 경우 점수 저장을 위한 2차원 배열 생성

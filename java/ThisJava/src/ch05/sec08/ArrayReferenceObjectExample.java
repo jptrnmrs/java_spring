@@ -1,9 +1,5 @@
 package ch05.sec08;
-/*
- * 장제목 : 5장 객체를 참조하는 배열
- * 이름 : 최형욱
- * 작성일 : 2024.01.05
- */
+
 public class ArrayReferenceObjectExample {
 	public static void main(String[] args) {
 		String[] strArray = new String[3];
