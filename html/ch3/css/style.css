@@ -77,7 +77,7 @@ h2.title+ {
 h2.title~ {
     color: #8e44ad;
 }
-ol>li:first-child,li:nth-child(3) {
+ol>li:nth-child(2n-1) {
     color: orange;
 }
 .intro:hover{
