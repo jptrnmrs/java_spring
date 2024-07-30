@@ -1,8 +1,8 @@
 package user2;
 
+import java.util.List;
 import java.util.Scanner;
 
-import user4.User4VO;
 
 public class User2Main {
 	public static void main(String[] args) {
@@ -32,10 +32,11 @@ public class User2Main {
 				User2VO user = new User2VO(uid, name, birth, addr);
 				User2DAO dao = User2DAO.getInstance();
 				dao.insertUser(user);
+				System.out.println("성공적으로 등록되었습니다.");
 			}else if(ans==2) {
-
 				User2DAO dao = User2DAO.getInstance();
-				dao.selectUsers();
+				List<User2VO> users = dao.selectUsers();
+				for(User2VO user : users) System.out.println(user);
 			}else if(ans==3) {
 
 				System.out.print("찾을 아이디 입력 : ");
@@ -46,9 +47,19 @@ public class User2Main {
 				else System.out.println(user);
 				
 			}else if(ans==4) {
-				User2VO user = null;
+				System.out.print("아이디 입력 : ");
+				String uid = in.next();
+				System.out.print("이름 입력 : ");
+				String name = in.next();
+				System.out.print("생일 입력 : ");
+				String birth = in.next();
+				System.out.print("주소 입력 : ");
+				String addr = in.next();
+				User2VO user = new User2VO(uid, name, birth, addr);
 				User2DAO dao = User2DAO.getInstance();
 				int result = dao.updateUser(user);
+				if(result>0) System.out.println("변경되었습니다.");
+				else System.out.println("없는 아이디입니다.");
 			}else if(ans==5) {
 				
 				System.out.print("삭제할 아이디 입력 : ");

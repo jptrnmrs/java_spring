@@ -26,7 +26,7 @@ public class User4Main {
 				System.out.print("이름 입력 : ");
 				String name = in.next();
 				System.out.print("성별 입력 : ");
-				String birth = in.next();
+				String gender = in.next();
 				System.out.print("나이 입력 : ");
 				int age = in.nextInt();
 				System.out.print("핸드폰 입력 : ");
@@ -34,7 +34,7 @@ public class User4Main {
 				System.out.print("주소 입력 : ");
 				String addr = in.next();
 				
-				User4VO user = new User4VO(uid, name, birth, age, hp, addr);
+				User4VO user = new User4VO(uid, name, gender, age, hp, addr);
 				User4DAO dao = User4DAO.getInstance();
 				dao.insertUser(user);
 				
@@ -65,7 +65,7 @@ public class User4Main {
 				System.out.print("수정할 이름 : ");
 				String name = in.next();
 				System.out.print("수정할 성별 : ");
-				String birth = in.next();
+				String gender = in.next();
 				System.out.print("수정할 나이 : ");
 				int age = in.nextInt();
 				System.out.print("수정할 핸드폰 : ");
@@ -73,7 +73,7 @@ public class User4Main {
 				System.out.print("수정할 주소 : ");
 				String addr = in.next();
 				
-				User4VO user = new User4VO(uid, name, birth, age, hp, addr);
+				User4VO user = new User4VO(uid, name, gender, age, hp, addr);
 				User4DAO dao = User4DAO.getInstance();
 				
 				int result = dao.updateUser(user);
