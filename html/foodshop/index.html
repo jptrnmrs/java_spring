@@ -28,9 +28,12 @@
             color: white;
         }
         span.big{
-            font-size: 22px;
-            font-weight: 600;
-            font-family: '돋움', serif;
+            font-size: 23px;
+            font-weight: 500;
+        }
+        
+        span.small{
+            margin-bottom: 20px;
         }
         header > .main > div{
             position: relative;
@@ -120,7 +123,13 @@
         .thumb{ padding: 30px; }
         .thumb .orange{ font-size: 16px; font-weight: 600;}
         .thumb .big{ display: inline-block; margin: 10px 0;}
-
+        .thumb> a>p{
+            width: 210px;
+        }
+        .thumb:nth-child(1)>a>p{
+            width: 170px;
+            margin-bottom: 10px;
+        }
         article.oneday{
             background-color: #f4f4f4;
         }
@@ -130,7 +139,6 @@
             background: url(img/oneday_bg.png) center;
             overflow: hidden;
         }
-
         div.cate > img{
             display: block;
             margin: 50px auto;
@@ -151,7 +159,7 @@
         div.cate p{
             font-weight: 600;
             color: #888;
-            font-size: 14px;
+            font-size: 13px;
         }
         div.cate .orange{
             display: inline-block;
@@ -169,15 +177,64 @@
             border: 1px solid #ddd;
             box-shadow: 0 2px 2px #aaa;
             text-align: center;
-            font-size: 16px;
-            padding: 10px;
-            color: #626262;
+            font-size: 15px;
+            padding: 13px;
+            color: #656565;
             font-weight: bold;
             box-sizing: border-box;
             margin-top: 60px;
         }
+        a[href].go{
+            color: #656565;
+        }
+        .go:hover{
+            border: 1px solid #aaa;
+        }
         main article:nth-of-type(5){
-            background: url(img/premium_bg.png)  center no-repeat;
+            background: url(img/premium_bg.png) center no-repeat;
+            background-size: cover;
+        }
+        main article:nth-of-type(5)> .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer>div:nth-of-type(1){
+            background-color: #626262;
+        }
+        footer>div:nth-of-type(1)>.box{
+            display:  flex;
+            align-items: center;
+        }
+        footer>div:nth-of-type(1) p{
+            color: #f4f4f4;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        footer a[href] {
+            font-weight: 600;
+            font-size: 16px;
+            color: white;
+        }
+        footer .orange{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        footer>div:nth-of-type(2){
+            background-color: #434343;
+        }
+        footer>div:nth-of-type(2) p{
+            line-height: 25px;
+            padding-top: 10px;
+            font-size: 16px;
+            color: #a9a9a9;
+            font-weight: 700;
+            box-sizing: border-box;
+            float: left;
+        }
+        footer>div:nth-of-type(2) img{
+            margin-top: 20px;
+            float: right;
         }
     </style>
 </head>
@@ -240,7 +297,7 @@
                             <p>
                                 <span class="orange">생활야채</span><br>
                                 <span class="big white">1일 1야채<br>건강한 생활습관</span> <br>
-                                <span class="small white">아삭아삭 건강에도 좋은<br>야채를 1일 1야채로<br>생활에 활기를 느껴보세요!.</span>
+                                <span class="small white">아삭아삭 건강에도 좋은<br>야채를 1일 1야채로<br>생활에 활기를 느껴보세요!</span>
                             </p>
                             <img src="img/main_go_ico.png">
                         </a>
@@ -325,7 +382,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="go">전체 상품보기</a>
+                    <a href="#" class="go">전체 상품 보기</a>
                 </div>
             
             </article>
@@ -371,7 +428,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="go">전체 상품보기</a>
+                    <a href="#" class="go">전체 상품 보기</a>
                 </div>
             </article>
         </main>
@@ -379,8 +436,8 @@
             <div>
                 <div class="box">
                     <p>
-                        <a href="#"><span class="orange">이용약관</span></a> | 
-                        <a href="#">이용안내</a> | 
+                        <a href="#"><span class="orange">이용약관</span></a>&nbsp; |&nbsp; 
+                        <a href="#">이용안내</a>&nbsp; |&nbsp; 
                         <a href="#">개인정보취급방침</a>
                     </p>
                 </div>
