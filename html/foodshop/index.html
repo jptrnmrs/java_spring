@@ -124,13 +124,60 @@
         article.oneday{
             background-color: #f4f4f4;
         }
-        main > article > div >ul > li > img {
-            width: 225px;
+        article.oneday > div.box {
+            display: flex;
+            align-items: center;
+            background: url(img/oneday_bg.png) center;
+            overflow: hidden;
+        }
+
+        div.cate > img{
+            display: block;
+            margin: 50px auto;
+        }
+        main > article > div > ul > li > a > img {
+            width: 255px;
             height: 170px;
+            object-fit: cover;
+        }
+        div.cate {
+            text-align: center;
+        }
+        div.cate h3{
+            font-size: 20px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        div.cate p{
+            font-weight: 600;
+            color: #888;
+            font-size: 14px;
+        }
+        div.cate .orange{
+            display: inline-block;
+            margin: 30px 0;
+            font-weight: bolder;
+        }
+        li span.bold{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .go{
+            display: inline-block;
+            width: 300px;
+            height: 50px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 2px #aaa;
+            text-align: center;
+            font-size: 16px;
+            padding: 10px;
+            color: #626262;
+            font-weight: bold;
+            box-sizing: border-box;
+            margin-top: 60px;
         }
         main article:nth-of-type(5){
-            background: url(img/premium_bg.png) 100% center no-repeat;
-
+            background: url(img/premium_bg.png)  center no-repeat;
         }
     </style>
 </head>
@@ -242,32 +289,40 @@
                 </div>
             </article>
             <article>
-                <div class="box vege">
+                <div class="box cate">
                     <img src="img/vegetable_tit.png">
                     <ul>
                         <li>
-                            <img src="img/thumb1.jpg">
-                            <h3>플레인요거트 4개입</h3>
-                            <p>견과류, 과일과 같이 먹는 플레인 요거트<br>
-                                <span class="big orange">7,500원</span></p>
+                            <a href="#">
+                                <img src="img/thumb1.jpg">
+                                <h3>플레인요거트 4개입</h3>
+                                <p>견과류, 과일과 같이 먹는 플레인 요거트<br>
+                                    <span class="bold orange">7,500원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb2.jpg">
-                            <h3>프랑스 더치커피</h3>
-                            <p>프랑스 만의 방식으로 내려진 더치커피<br>
-                                <span class="big orange">5,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb2.jpg">
+                                <h3>프랑스 더치커피</h3>
+                                <p>프랑스 만의 방식으로 내려진 더치커피<br>
+                                    <span class="bold orange">5,000원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb3.jpg">
-                            <h3>로얄밀크 홍차</h3>
-                            <p>일본에서 온 깊고 풍부한 맛의 로얄 밀크티<br>
-                                <span class="big orange">17,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb3.jpg">
+                                <h3>로얄밀크 홍차</h3>
+                                <p>일본에서 온 깊고 풍부한 맛의 로얄 밀크티<br>
+                                    <span class="bold orange">17,000원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb4.jpg">
-                            <h3>스위스 핫초코 320g</h3>
-                            <p>스위스에서 온 핫초코로 따뜻한 연말<br>
-                                <span class="big orange">4,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb4.jpg">
+                                <h3>스위스 핫초코 320g</h3>
+                                <p>스위스에서 온 핫초코로 따뜻한 연말<br>
+                                    <span class="bold orange">4,000원</span></p>
+                            </a>
                         </li>
                     </ul>
                     <a href="#" class="go">전체 상품보기</a>
@@ -280,32 +335,40 @@
                 </div>
             </article>
             <article>
-                <div class="box sea">
+                <div class="box cate">
                     <img src="img/seafood_tit.png">
                     <ul>
                         <li>
-                            <img src="img/thumb1.jpg">
-                            <h3>플레인요거트 4개입</h3>
-                            <p>견과류, 과일과 같이 먹는 플레인 요거트<br>
-                                <span class="big orange">7,500원</span></p>
+                            <a href="#">
+                                <img src="img/thumb1.jpg">
+                                <h3>플레인요거트 4개입</h3>
+                                <p>견과류, 과일과 같이 먹는 플레인 요거트<br>
+                                    <span class="bold orange">7,500원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb2.jpg">
-                            <h3>프랑스 더치커피</h3>
-                            <p>프랑스 만의 방식으로 내려진 더치커피<br>
-                                <span class="big orange">5,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb2.jpg">
+                                <h3>프랑스 더치커피</h3>
+                                <p>프랑스 만의 방식으로 내려진 더치커피<br>
+                                    <span class="bold orange">5,000원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb3.jpg">
-                            <h3>로얄밀크 홍차</h3>
-                            <p>일본에서 온 깊고 풍부한 맛의 로얄 밀크티<br>
-                                <span class="big orange">17,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb3.jpg">
+                                <h3>로얄밀크 홍차</h3>
+                                <p>일본에서 온 깊고 풍부한 맛의 로얄 밀크티<br>
+                                    <span class="bold orange">17,000원</span></p>
+                            </a>
                         </li>
                         <li>
-                            <img src="img/thumb4.jpg">
-                            <h3>스위스 핫초코 320g</h3>
-                            <p>스위스에서 온 핫초코로 따뜻한 연말<br>
-                                <span class="big orange">4,000원</span></p>
+                            <a href="#">
+                                <img src="img/thumb4.jpg">
+                                <h3>스위스 핫초코 320g</h3>
+                                <p>스위스에서 온 핫초코로 따뜻한 연말<br>
+                                    <span class="bold orange">4,000원</span></p>
+                            </a>
                         </li>
                     </ul>
                     <a href="#" class="go">전체 상품보기</a>
