@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;            
+    font: normal 12px "noto sans korean";
+}
+
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111;}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;   
+}
+
+header {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+header > div {
+    width: 100%;
+    box-sizing: border-box;
+}
+header > div:nth-child(1) {height: 44px;}
+header > div:nth-child(2) {height: 110px;}
+header > div:nth-child(3) {height: 46px;}
+.center {
+    width: 1126px;
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+main > section {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+main > section:nth-child(1) {height: 480px;}
+main > section:nth-child(2) {height: auto;}
+main > section:nth-child(3) {height: 620px;}
+main > section:nth-child(4) {height: auto;}
+main > section:nth-child(5) {height: auto;}
+
+
+main > .new .center {
+    height: 480px;            
+}
+main > .new > .center > div {
+    float: left;
+    box-sizing: border-box;
+}
+
+main > .new .new1 {width: 40%; height: 100%;}
+.new2, .new3, .new4, .new5 {width: 30%; height: 50%;}
+
+main > .farmer ul > li {
+    float: left;
+    width: 25%;
+    height: 334px;
+    box-sizing: border-box;
+}
+
+main .list .center {            
+    overflow: hidden;
+}
+
+main .list .center > div {
+    float: left;
+    width: 25%;
+    height: 400px;      
+    box-sizing: border-box;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+footer > div {
+    width: 1126px;
+    height: 210px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}

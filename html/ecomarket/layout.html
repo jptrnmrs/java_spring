@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket :: layout</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #wrapper {
+            border: 1px solid red;
+        }
+        header {
+            border: 1px solid blue;
+        }
+        header > div {
+            border: 1px solid green;
+        }
+        header > div > * {
+            border: 1px solid orange;
+        }
+        main {
+            border: 1px solid blue;
+        }
+        main > section {
+            border: 1px solid green;
+        }
+        main > section > article {
+            border: 1px solid orange;
+        }
+        main > .new > article > div {
+            border: 1px solid pink;
+        }
+        main > .master > article > div {
+            border: 1px solid pink;
+        }
+        main .gallary > div {
+            border: 1px solid pink;
+        }
+        footer {
+            border: 1px solid blue;
+        }
+        footer > div {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <section></section>
+            </div>                
+            <div>
+                <nav></nav>
+            </div>
+        </header>
+        <main>
+            <section class="banner">
+                <article></article>
+            </section>
+            <section class="new">
+                <article>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </article>
+            </section>
+            <section class="master">
+                <article>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </article>
+            </section>            
+            
+            <section class="organic_banner"></section>
+            <section class="organic">                
+                <article class="gallary">                    
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </article>
+            </section>            
+            
+            <section class="grain_banner"></section>
+            <section class="grain">
+                <article class="gallary">                    
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </article>
+            </section>            
+        </main>
+        <footer>            
+            <div></div>
+        </footer>
+    </div>
+</body>
+</html>
