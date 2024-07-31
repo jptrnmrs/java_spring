@@ -37,12 +37,12 @@ public class CRUDTest {
 				
 				User1VO vo = new User1VO(uid, name, birth, hp, age);
 				
-				UserDAO dao = UserDAO.getInstance();
+				User1DAO dao = User1DAO.getInstance();
 				dao.insertUser(vo);
 				
 				System.out.println("입력 완료");
 			}else if(ans==2) {
-				UserDAO dao = UserDAO.getInstance();
+				User1DAO dao = User1DAO.getInstance();
 				List<User1VO> users = dao.selectUsers();
 				for(User1VO vo : users) {
 					System.out.println(vo);
@@ -51,13 +51,13 @@ public class CRUDTest {
 				System.out.print("검색 아이디 : ");
 				String uid = in.next().trim();
 				
-				UserDAO dao = UserDAO.getInstance();
+				User1DAO dao = User1DAO.getInstance();
 				User1VO user = dao.searchUser(uid);
 				System.out.println(user);
 			}else if(ans==4) {
 				System.out.print("바꿀 아이디 : ");
 				String uid = in.next().trim();
-				UserDAO dao = UserDAO.getInstance();
+				User1DAO dao = User1DAO.getInstance();
 				if(dao.searchUser(uid).getUid()==null) {
 					System.out.println("선택한 아이디가 없습니다.");
 					continue;
@@ -79,7 +79,7 @@ public class CRUDTest {
 			}else if(ans==5) {
 				System.out.print("삭제할 아이디 : ");
 				String uid = in.next().trim();
-				UserDAO dao = UserDAO.getInstance();
+				User1DAO dao = User1DAO.getInstance();
 				int result = dao.deleteUser(uid);
 				
 				if(result>0) System.out.println("삭제 완료되었습니다.");

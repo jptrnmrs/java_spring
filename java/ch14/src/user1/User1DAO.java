@@ -8,14 +8,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAO {
+public class User1DAO {
 	// 싱글톤
 	
-	private static UserDAO instance = new UserDAO();
-	public static UserDAO getInstance() {
+	private static User1DAO instance = new User1DAO();
+	public static User1DAO getInstance() {
 		return instance;
 	}
-	private UserDAO() {}
+	private User1DAO() {}
 	
 	// DB 정보
 	private final static String HOST = "jdbc:mysql://localhost:3306/studydb";
