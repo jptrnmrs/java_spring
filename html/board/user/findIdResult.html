@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디 찾기 결과</title>
+    <link rel="stylesheet" href="../css/find.css">
+    <style>
+        #name::after{ content: "홍길동"; }
+        #userid::after{ content: "honggildong"; }
+        #mail::after{ content: "honggildong@gmail.com"; }
+        #rdate::after{ content: "2022-11-16 10:20";}
+        #name,#userid,#mail,#rdate{
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Board System</h3>
+    </header>
+    <main>
+        <section>
+            <form>
+                <h2>아이디 찾기 결과</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>이름</th>
+                            <td><span id="name"></span></td>
+                        </tr>
+                        <tr>
+                            <th>아이디</th>
+                            <td><span id="userid"></span></td>
+                        </tr>
+                        <tr>
+                            <th>이메일</th>
+                            <td>
+                                <span id="mail"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>가입일</th>
+                            <td>
+                                <span id="rdate"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <p>
+                고객님의 정보와 일치하는 아이디 입니다.
+            </p>
+        </section>
+        <a href="./findPass.html">비밀번호 찾기</a> 
+        <a href="#">로그인</a> 
+    </main>
+    <footer>
+        <p>Copyright&copy; 김철학(개발에반하다.)</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호 찾기</title>
+    <link rel="stylesheet" href="../css/find.css">
+</head>
+<body>
+    <header>
+        <h3>Board System</h3>
+    </header>
+    <main>
+        <section>
+            <form>
+                <h2>비밀번호 찾기</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><label for="userid">아이디</label></th>
+                            <td><input type="text" placeholder="아이디 입력" required autofocus id="userid"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="email">이메일</label></th>
+                            <td>
+                                <input type="email" placeholder="이메일 입력" required id="email">
+                                <button>인증번호 받기</button><br>
+                                <input type="text" placeholder="인증번호 입력">
+                                <button>확인</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <p>
+                비밀번호를 찾고자 하는 아이디와 이메일을 입력해주세요.<br>
+                회원가입시 입력한 아이디와 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.<br>
+                인증번호를 입력 후 확인 버튼을 누르세요.
+            </p>
+        </section>
+        <a href="#">다음</a> 
+        <a href="#">취소</a> 
+    </main>
+    <footer>
+        <p>Copyright&copy; 김철학(개발에반하다.)</p>
+    </footer>
+</body>
+</html>

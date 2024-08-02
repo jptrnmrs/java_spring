@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header,footer{
+    background-image: url(../images/admin/admin_bg.jpg);
+    /* position: fixed;
+    left: 0;
+    right: 0;
+}
+header{
+    top: 0; */
+}
+header>div{
+    width: 980px;
+    height: 60px;
+    margin: 0 auto;
+    padding: 14px;
+    box-sizing: border-box;
+}
+header p{
+    width: auto;
+    float: right;
+}
+header p, p>a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24%;
+}
+footer{
+    bottom: 0;
+}
+
+@media (max-width : 980px){
+    header>div{
+        width: 100%;
+    }
+}
