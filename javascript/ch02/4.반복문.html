@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>4.반복문</title>
+    <!--     
+            날짜 : 2024.08.05
+            이름 : 김주경
+            내용 : 자바스크립트 반복문 실습하기
+     -->
+</head>
+<body>
+    <h3>4. 반복문</h3>
+
+    <h4>for</h4>
+    <script>
+        for(let i=1; i<=5; i++){
+            document.write('i : ' + i + '<br>');
+        }
+
+        let sum = 0;
+
+        for(let i = 1; i<=10 ; i++) sum+=i;
+        document.write('1부터 10까지의 합 : ' + sum + '<br>');
+
+        sum = 0;
+        
+        for(let i = 1; i<=10 ; i++){ if(i%2==0) sum+=i; }
+        document.write('1부터 10까지 짝수 합 : ' + sum + '<br>');
+
+        for(let i = 1; i <6 ; i++){
+            for(let j = 0 ; j < i ; j++){
+                document.write('☆');
+            }
+            document.write('<br>');
+        }
+    </script>
+
+    <h4>while</h4>
+    <script>
+        let total  = 0;
+        let k = 1;
+
+        while(k<=10){
+            if(k%2==0){
+                total +=k;
+            }
+            k++;
+        }
+        document.write('1부터 10까지 짝수 합 : ' + total + '<br>');
+
+        let oddSum =0;
+        let j = 1;
+        // do-while
+        do{
+            if(j%2 ==1){
+                oddSum +=j;
+            }
+            j++;
+        }while(j<=10);
+
+        document.write('1부터 10까지 홀수 합 : ' + oddSum + '<br>');
+
+        let num = 1;
+        while(true){
+
+            if(num %5==0 &num%7==0)
+                break;
+            num++;
+        }
+        document.write('5와 7의 최소공배수 : ' + num + '<br>');
+
+        //continue
+        let tot = 0;
+
+        for(let i = 1 ; i <=10;i++){
+            if(i%2==1) continue;
+            tot+=i;
+        }
+        document.write('1부터 10까지 짝수 합 : ' + tot + '<br>');
+
+    </script>
+    <h4>구구단</h4>
+    <script>
+        document.write('<table border="1">');
+            document.write('<tr>');
+                for(let i = 2 ; i <10; i++){
+                    document.write('<th>' + i + '단 </th>');
+                }
+                document.write('</tr>')
+            for(let k = 1 ; k <10 ; k++){
+                document.write('<tr>');
+                    for(let j = 2 ; j <10 ;j++){
+                        document.write('<td>' + j + 'x' + k + '=' + j*k+'</td>');
+                    }
+                document.write('</tr>');
+            }
+
+    </script>
+    
+</body>
