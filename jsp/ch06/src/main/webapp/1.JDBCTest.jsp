@@ -1,13 +1,13 @@
-<%@ pagecontentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>1.JDBC Test</title>
 	<!-- 
-		날짜 : 2024.08.08.
-		이름 : 김주경
-		내용 : JSP 데이터베이스 실습
+		ë ì§ : 2024.08.08.
+		ì´ë¦ : ê¹ì£¼ê²½
+		ë´ì© : JSP ë°ì´í°ë² ì´ì¤ ì¤ìµ
 	 -->
 	 <style>
 	 	a,a:visited{

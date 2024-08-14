@@ -36,20 +36,20 @@
 						header: {'Content-Type':'application/json'},
 						body: JSON.stringify(jsonData)
 					})
-					.then(response => response.json)
+					.then(response => response.json())
 					.then(data => {
 						console.log(data)
 						//서버에서 결과 데이터 수신
 						if(data.result>0){
 							alert('등록 성공');
+							location.href = './list.jsp';
 						}else{
 							alert('등록 실패');
-							
 						}
 					})
 					.catch(err=>{
 						console.log(err)
-					})
+					});
 					
 			}
 		}
