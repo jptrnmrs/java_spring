@@ -1,3 +1,4 @@
 {
-    "files.defaultLanguage": "ko"
+    "files.defaultLanguage": "ko",
+    "liveServer.settings.port": 5501
 }
