@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font: normal 12px '나눔고딕';
+        }
+        body{
+            background-color: lightgrey;
+            padding: 20px;
+        }
+        #wrap{
+            height: 90vh;
+            border-radius: 5px;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+        @media (min-width: 550px){
+            #wrap{ width: 500px;  margin: 0 auto; }
+        }
+
+        header{
+            background-color: dimgray;
+            height: 50px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .in{ overflow: hidden; }
+        .in > * { display: block; float: left; box-sizing: border-box; height: 35px; margin-top: 20px;}
+        .in > input{
+            width: 90%;
+            border-radius: 5px 0 0 5px;
+            padding-left: 10px;
+            border: 1px solid dimgray;
+            border-right: none;
+        }
+        input:focus{ outline : none; }
+        .in > button{
+            width: 10%;
+            border-radius: 0 5px 5px 0;
+            background-color: dimgray;
+            border: 1px solid dimgray;
+            color: white;
+            cursor: pointer;
+        }
+
+        .list>ul{
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgray;
+            list-style: none;
+            counter-reset : numbering;
+            list-style-type:none;
+        }
+        ul>li{
+            display: flex;
+            height: 30px;
+            align-items: center;
+            padding-left: 20px;
+            border-bottom: 1px solid lightgray;
+            position: relative;
+        }
+        ul>li::before{
+            counter-increment : numbering; 
+            content : counter(numbering)".";
+            margin-right:10px;
+        }
+        ul>li:last-of-type{ border-bottom: none; }
+        .none{ display: none; }
+        a{
+            position: absolute;
+            right: 10px;
+            text-decoration: none;
+            color: dimgray;
+            line-height: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+    </style>
+    <script>
+        window.onload = function(){
+            const out = document.getElementsByClassName('list')[0];
+            const list = document.getElementsByTagName('ul')[0];
+            const intodo = document.getElementsByTagName('input')[0];
+            
+            const todolist = JSON.parse(localStorage.getItem("todos"));
+
+            function listed() {
+                const intoList = [];
+                for(let i = 0; i<list.children.length;i++){
+                    const todoObj = {
+                        contents: list.children[i].querySelector('span').textContent
+                    };
+                    intoList.push(todoObj);
+                }
+                localStorage.setItem("todos",JSON.stringify(intoList));
+                location.reload(true);
+            }
+
+            if(todolist.length===0){
+                out.classList.add('none');
+                list.classList.add("none");
+            }else{
+                for(let todo of todolist){
+                    list.insertAdjacentHTML('beforeend', '<li><span>'+todo.contents
+                                        +'</span><a href="#" class="del">X</a></li>');
+                }
+                list.classList.remove("none");
+                out.classList.remove('none');
+            }
+            document.body.addEventListener('click', function(e){
+                
+                if(e.target.classList.contains('plus')){
+                    list.insertAdjacentHTML('beforeend', '<li><span>'+intodo.value
+                                        +'</span><a href="#" class="del">X</a></li>');
+                    listed();
+                }
+                if(e.target.classList.contains('del')){
+                    e.preventDefault();
+                    const li = e.target.closest('li');
+                    li.remove();
+                    listed();
+                }
+            });
+            intodo.addEventListener('keydown',(e)=> {
+                if(window.event.keyCode === 13 && intodo.value !==""){
+                    list.insertAdjacentHTML('beforeend', '<li><span>'+intodo.value
+                                        +'</span><a href="#" class="del">X</a></li>');
+                    listed();
+                }
+            });  
+
+
+        }// onload 끝
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            ToDo List
+        </header>
+        <main>
+            <section>
+                    &nbsp; &nbsp; 오늘 할일을 작성해보세요.
+                    <article class="in">
+                        <input type="text" name="todo" placeholder="할일을 입력하세요." autofocus>
+                        <button class="plus">추가</button>
+                    </article>
+            </section>
+            <section class="list">
+                <ul id="list">
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
