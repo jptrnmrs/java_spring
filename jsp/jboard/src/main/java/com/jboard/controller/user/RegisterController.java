@@ -34,8 +34,9 @@ public class RegisterController extends HttpServlet{
 		String zip = req.getParameter("zip");
 		String addr1 = req.getParameter("addr1");
 		String addr2 = req.getParameter("add2");
+		String regip = req.getRemoteAddr();
 		
-		UserDTO userDto = new UserDTO(uid, pass, name, nick, email, hp, zip, addr1, addr2);
+		UserDTO userDto = new UserDTO(uid, pass, name, nick, email, hp, zip, addr1, addr2,regip);
 		
 		service.insertUser(userDto);
 		

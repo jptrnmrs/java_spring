@@ -10,7 +10,7 @@ public class SQL {
 
 	public final static String INSERT_USER = "insert into `user` set "
 											+"`uid`=?, "
-											+"`pass`=?, "
+											+"`pass`=SHA2(?,256), "
 											+"`name`=?, "
 											+"`nick`=?, "
 											+"`email`=?, "
@@ -21,7 +21,7 @@ public class SQL {
 											+"`regip`=?,"
 											+"`regDate`=NOW()";
 	public final static String UPDATE_USER = "update `user` set "
-											+"`pass`=?, "
+											+"`pass`=SHA2(?,256), "
 											+"`name`=?, "
 											+"`nick`=?, "
 											+"`email`=?, "

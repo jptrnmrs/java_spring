@@ -98,8 +98,10 @@ public class UserDTO {
 				+ ", hp=" + hp + ", role=" + role + ", zip=" + zip + ", addr1=" + addr1 + ", addr2=" + addr2
 				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveDate=" + leaveDate + "]";
 	}
+	
+	
 	public UserDTO(String uid, String pass, String name, String nick, String email, String hp, String zip, String addr1,
-			String addr2) {
+			String addr2, String regip) {
 		this.uid = uid;
 		this.pass = pass;
 		this.name = name;
@@ -109,6 +111,7 @@ public class UserDTO {
 		this.zip = zip;
 		this.addr1 = addr1;
 		this.addr2 = addr2;
+		this.regip = regip;
 	}
 	public UserDTO() {
 	}
