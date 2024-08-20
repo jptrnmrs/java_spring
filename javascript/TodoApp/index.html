@@ -110,7 +110,7 @@
                 location.reload(true);
             }
 
-            if(todolist.length===0){
+            if(todolist==null || todolist.length<1){
                 out.classList.add('none');
                 list.classList.add("none");
             }else{
