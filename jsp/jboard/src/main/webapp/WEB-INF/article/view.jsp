@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,42 +18,44 @@
                 <table>
                     <tr>
                         <td>제목</td>
-                        <td><input type="text" name="title" value="제목입니다." readonly/></td>
+                        <td><input type="text" name="title" value="${article.title}" readonly/></td>
                     </tr>
                     <tr>
                         <td>첨부파일</td>
                         <td>
-                            <a href="#">2020년 상반기 매출자료.xls</a>
-                            <span>7회 다운로드</span>
+                            <a href="#">${file1.oName}</a>
+                            <span>${file1.download}회 다운로드</span>
                         </td>
                     </tr>
                     <tr>
                         <td>내용</td>
                         <td>
-                            <textarea name="content" readonly>내용 샘플입니다.</textarea>
+                            <textarea name="content" readonly>${article.content}</textarea>
                         </td>
                     </tr>
                 </table>
                 <div>
-                    <a href="#" class="btnDelete">삭제</a>
-                    <a href="#" class="btnModify">수정</a>
-                    <a href="#" class="btnList">목록</a>
+                    <a href="/jboard/article/list.do" class="btnDelete">삭제</a>
+                    <a href="/jboard/article/list.do" class="btnModify">수정</a>
+                    <a href="/jboard/article/list.do" class="btnList">목록</a>
                 </div>  
                 
                 <!-- 댓글리스트 -->
                 <section class="commentList">
                     <h3>댓글목록</h3>
-                    <article class="comment">
-                        <span>
-                            <span>길동이</span>
-                            <span>20-05-13</span>
-                        </span>
-                        <textarea name="comment" readonly>댓글 샘플입니다.</textarea>
-                        <div>
-                            <a href="#">삭제</a>
-                            <a href="#">수정</a>
-                        </div>
-                    </article>
+                    <c:forEach var="comment" items="${comments}">
+	                    <article class="comment">
+	                        <span>
+	                            <span>${comment.writer}</span>
+	                            <span>${fn:substring(comment.rdate,2,10)}</span>
+	                        </span>
+	                        <textarea name="comment" readonly>${comment.content}</textarea>
+	                        <div>
+	                            <a href="#">삭제</a>
+	                            <a href="#">수정</a>
+	                        </div>
+	                    </article>
+                    </c:forEach>
                     <p class="empty">
                         등록된 댓글이 없습니다.
                     </p>

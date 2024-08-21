@@ -1,5 +1,15 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./_header.jsp"%>
+<script>
+	const success = ${requestScope.success};
+	if(success==100){
+		alert('로그인에 실패했습니다.\n 아이디 혹은 비밀번호를 확인해주세요.');
+	}else if(success==101){
+		alert('성공적으로 로그아웃되었습니다.');
+	}else if(success==102){
+		alert('먼저 로그인을 하셔야 합니다.');
+	}
+</script>
 <main>
 	<section class="login">
 		<form action="/jboard/user/login.do" method="post">

@@ -72,64 +72,56 @@ public class UserDAO extends DBHelper{
 		}
 		
 	}
-	public UserDTO selectUser(String uid) {
-		UserDTO dto = null;
+	public String selectWriter(String uid) {
+		String writer = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_WRITER);
+			psmt.setString(1, uid);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				writer = rs.getString(1);
+			}
+			closeAll();
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+		return writer;
+	}
+	public UserDTO selectUser(String uid, String pass) {
+		UserDTO user = null;
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.SELECT_USER);
 			psmt.setString(1, uid);
+			psmt.setString(2, pass);
 			rs = psmt.executeQuery();
 			if(rs.next()) {
-				dto = new UserDTO();
-				dto.setUid(rs.getString(1));
-				dto.setPass(rs.getString(2));
-				dto.setName(rs.getString(3));
-				dto.setNick(rs.getString(4));
-				dto.setEmail(rs.getString(5));
-				dto.setHp(rs.getString(6));
-				dto.setRole(rs.getString(7));
-				dto.setZip(rs.getString(8));
-				dto.setAddr1(rs.getString(9));
-				dto.setAddr2(rs.getString(10));
-				dto.setRegip(rs.getString(11));
-				dto.setRegDate(rs.getString(12));
-				dto.setLeaveDate(rs.getString(13));
+				user = new UserDTO();
+				user.setUid(rs.getString(1));
+				user.setPass(rs.getString(2));
+				user.setName(rs.getString(3));
+				user.setNick(rs.getString(4));
+				user.setEmail(rs.getString(5));
+				user.setHp(rs.getString(6));
+				user.setRole(rs.getString(7));
+				user.setZip(rs.getString(8));
+				user.setAddr1(rs.getString(9));
+				user.setAddr2(rs.getString(10));
+				user.setRegip(rs.getString(11));
+				user.setRegDate(rs.getString(12));
+				user.setLeaveDate(rs.getString(13));
 			}
 			closeAll();
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 		}
-		return dto;
+		return user;
 	}
 	public List<UserDTO> selectUsers() {
 		List<UserDTO> users = new ArrayList<>();
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_USERS);
-			rs = psmt.executeQuery();
-			while(rs.next()) {
-				UserDTO dto = new UserDTO();
-				dto.setUid(rs.getString(1));
-				dto.setPass(rs.getString(2));
-				dto.setName(rs.getString(3));
-				dto.setNick(rs.getString(4));
-				dto.setEmail(rs.getString(5));
-				dto.setHp(rs.getString(6));
-				dto.setRole(rs.getString(7));
-				dto.setZip(rs.getString(8));
-				dto.setAddr1(rs.getString(9));
-				dto.setAddr2(rs.getString(10));
-				dto.setRegip(rs.getString(11));
-				dto.setRegDate(rs.getString(12));
-				dto.setLeaveDate(rs.getString(13));
-				users.add(dto);
-			}
-			closeAll();
-			
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-		}
 		return users;
 	}
 	public void updateUser(UserDTO dto) {}
