@@ -19,32 +19,6 @@ public class FileDAO extends DBHelper{
 	private FileDAO() {}
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	public List<FileDTO> selectArticleFile(int ano) {
-		List<FileDTO> files = new ArrayList<>();
-		try {
-			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_FILE_FOR_ARTICLE);
-			psmt.setInt(1, ano);
-			rs = psmt.executeQuery();
-			
-			while(rs.next()) {
-				FileDTO file = new FileDTO();
-				file.setFno(rs.getInt(1));
-				file.setAno(rs.getInt(2));
-				file.setoName(rs.getString(3));
-				file.setsName(rs.getString(4));
-				file.setDownload(rs.getInt(5));
-				file.setRdate(rs.getString(6));
-				files.add(file);
-			}
-			
-			closeAll();
-					
-		} catch (Exception e) {
-			logger.error(e.getMessage());
-		}
-		return files;
-	}
 	public void insertFile(FileDTO file) {
 		try {
 			conn = getConnection();
@@ -53,14 +27,35 @@ public class FileDAO extends DBHelper{
 			psmt.setString(2, file.getoName());
 			psmt.setString(3, file.getsName());
 			psmt.executeUpdate();
-			closeAll();
 					
 		} catch (Exception e) {
 			logger.error(e.getMessage());
+		} finally {
+			closeAll();
 		}
 	}
-	public FileDTO selectFile(int fno) {
+	public FileDTO selectFile(String fno) {
 		FileDTO file = null;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_FILE);
+			psmt.setString(1, fno);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				file = new FileDTO();
+				file.setFno(rs.getInt(1));
+				file.setAno(rs.getInt(2));
+				file.setoName(rs.getString(3));
+				file.setsName(rs.getString(4));
+				file.setDownload(rs.getInt(5));
+				file.setRdate(rs.getString(6));
+			}
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		} finally {
+			closeAll();
+		}
 		return file;
 	}
 	public List<FileDTO> selectFiles() {
@@ -69,6 +64,18 @@ public class FileDAO extends DBHelper{
 	}
 	public void updateFile(FileDTO file) {
 		
+	}
+	public void updateFileDownloadCount(String fno) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_FILE_DOWNLOAD_COUNT);
+			psmt.setString(1, fno);
+			psmt.executeUpdate();
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		} finally {
+			closeAll();
+		}
 	}
 	public void deleteFile(int fno) {
 		

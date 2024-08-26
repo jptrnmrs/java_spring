@@ -26,10 +26,34 @@ public class DBHelper {
 		return ds.getConnection();
 	}
 	
-	protected void closeAll() throws SQLException {
-		if (rs != null){ rs.close(); }
-		if (stmt != null){ stmt.close(); }
-		if (psmt != null){ psmt.close(); }
-		if (conn != null){ conn.close(); }
+	protected void closeAll(){
+		if (rs != null){
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (stmt != null){
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		if (psmt != null){
+			try {
+				psmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null){
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

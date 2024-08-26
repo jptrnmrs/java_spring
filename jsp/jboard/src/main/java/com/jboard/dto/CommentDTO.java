@@ -7,17 +7,33 @@ public class CommentDTO {
 	private String writer;
 	private String regip;
 	private String rdate;
+	
+	//추가필드
+	private String nick;
+	
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
 	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
 	}
+	public void setNo(String no) {
+		this.no = Integer.parseInt(no);
+	}
 	public int getParent() {
 		return parent;
 	}
 	public void setParent(int parent) {
 		this.parent = parent;
+	}
+	public void setParent(String parent) {
+		this.parent = Integer.parseInt(parent);
 	}
 	public String getContent() {
 		return content;
@@ -42,6 +58,9 @@ public class CommentDTO {
 	}
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
+	}
+	public void setRdateSubstring(String rdate) {
+		this.rdate = rdate.substring(0, 10);
 	}
 	@Override
 	public String toString() {

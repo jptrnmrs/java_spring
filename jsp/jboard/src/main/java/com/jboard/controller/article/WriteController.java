@@ -9,8 +9,8 @@ import org.slf4j.LoggerFactory;
 import com.jboard.dto.ArticleDTO;
 import com.jboard.dto.FileDTO;
 import com.jboard.dto.UserDTO;
-import com.jboard.service.user.ArticleService;
-import com.jboard.service.user.FileService;
+import com.jboard.service.article.ArticleService;
+import com.jboard.service.article.FileService;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

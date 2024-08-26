@@ -8,10 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import com.jboard.dto.ArticleDTO;
 import com.jboard.dto.CommentDTO;
-import com.jboard.dto.FileDTO;
-import com.jboard.service.user.ArticleService;
-import com.jboard.service.user.CommentService;
-import com.jboard.service.user.FileService;
+import com.jboard.service.article.ArticleService;
+import com.jboard.service.article.CommentService;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -25,7 +23,6 @@ public class ViewController extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	private ArticleService articleService = ArticleService.INSTANCE;
-	private FileService fileService = FileService.INSTANCE;
 	private CommentService commentService = CommentService.INSTANCE;
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
@@ -34,15 +31,16 @@ public class ViewController extends HttpServlet{
 		
 		articleService.veiwArticle(no); // 조회수 증가
 		
+		// 게시글 조회
 		ArticleDTO article = articleService.selectArticle(no);
+		
+		// 댓글 조회
+		List<CommentDTO> comments = commentService.selectComments(no);
+		
+		// 공유 참조
 		req.setAttribute("article", article);
-		List<FileDTO> files = fileService.selectArticleFile(article.getNo());
-		int i = 1;
-		for(FileDTO file : files) {
-			req.setAttribute("file"+i++, file);
-		}
-		List<CommentDTO> comments = commentService.selectArticleComments(article.getNo());
 		req.setAttribute("comments", comments);
+		
 		logger.debug(article.toString());
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/article/view.jsp");

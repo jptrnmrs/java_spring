@@ -1,0 +1,33 @@
+package com.jboard.service.article;
+
+import java.util.List;
+
+import com.jboard.dao.CommentDAO;
+import com.jboard.dto.CommentDTO;
+
+public enum CommentService {
+	INSTANCE;
+	
+	private CommentDAO dao = CommentDAO.getInstance();
+	
+
+	public void countComments(String no) {
+		dao.countComments(no);
+	}
+	public int insertComment(CommentDTO dto) {
+		return dao.insertComment(dto);
+	}
+	public CommentDTO selectComment(int no) {
+		return dao.selectComment(no);
+	}
+	public List<CommentDTO> selectComments(String parent) {
+		return dao.selectComments(parent);
+	}
+	public int updateComment(CommentDTO dto) {
+		return dao.updateComment(dto);
+	}
+	public int deleteComment(String no) {
+		return dao.deleteComment(no);
+	}
+	
+}

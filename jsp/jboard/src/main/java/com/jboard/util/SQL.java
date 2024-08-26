@@ -30,35 +30,45 @@ public class SQL {
 												+"`writer`=?, "
 												+"`regip`=?, "
 												+"`rdate`=now() ";
-	public final static String SELECT_ARTICLE = "select * from `article` where `no`=?";
-	public final static String SELECT_ARTICLES = "SELECT "
-												+ "	`no`, "
-												+ "	`cate`, "
-												+ "	`title`, "
-												+ "	`content`, "
-												+ "	`comment`, "
-												+ "	`file`, "
-												+ "	`hit`, "
-												+ "	`writer`, "
-												+ "	a.`regip`, "
-												+ "	`rdate`, "
-												+ "	`nick` "
-												+ "FROM `article` a "
-												+ "JOIN `user` b ON a.writer = b.uid ";
+	public final static String SELECT_ARTICLE = "select a.*,c.`nick` ,b.* from `article` AS a "
+											+ "left join `file` AS b on a.no=b.ano "
+											+ "JOIN `user` c ON a.writer = c.uid "
+											+ "where `no`=?";
+	public final static String SELECT_COUNT_TOTAL = "select count(*) from `article`";
+	
+	public final static String SELECT_ARTICLES = "SELECT a.*, b.`nick`, ROW_NUMBER() OVER (ORDER BY `no`) FROM `article` a "
+												+ "JOIN `user` b ON a.writer = b.uid "
+												+ "ORDER BY `no` DESC "
+												+ "LIMIT ?,10";
 	public final static String VIEW_ARTICLE = "update `article` set `hit` = hit+1 where `no`=?";
+	public final static String COMMENT_ARTICLE = "update `article` set `comment` = ? where `no`=?";
 	public final static String SELECT_WRITER = "select `nick` from `user` where `uid`= ?";
+	
+// Comment
+	public final static String INSERT_COMMENT = "insert into `comment` set "
+												+ "`parent`=?, "
+												+ "`content`=?, "
+												+ "`writer`=?, "
+												+ "`regip`=?, "
+												+ "`rdate`=NOW()";			
+	public final static String SELECT_COMMENT = "select a.*, b.nick from `comment` a join `user` b on a.writer=b.uid where `no`=?";			
+	public final static String SELECT_COMMENTS = "select a.*, b.nick from `comment` a join `user` b on a.writer=b.uid where `parent`=? order by a.`no`";			
+	public final static String COUNT_COMMENTS = "select COUNT(`no`) from `comment` where `parent`= ?";			
+	public final static String UPDATE_COUNT = "update `article` set `comment`=? where `no`=?";			
+	public final static String UPDATE_COMMENT = "update `comment` set `content`=? where `no`=?";			
+	public final static String DELETE_COMMENT = "delete from `comment` where `no`=?";			
+	
 	
 // File
 	public final static String INSERT_FILE = "insert into `file` set "
 											+ "`ano` = ?, "
 											+ "`oName` = ?, "
 											+ "`sName` = ?, "
-											+ "`rdate` = NOW()";
-	public final static String SELECT_FILE_FOR_ARTICLE = "select * from `file` where `ano`=?";			
+											+ "`rdate` = NOW()";	
 	
+	public final static String SELECT_FILE = "select * from `file` where `fno`=?";			
+	public final static String UPDATE_FILE_DOWNLOAD_COUNT
+											= "update `file` set `download`=`download`+1 where `fno`=?";			
 
-// Comment
-	public final static String SELECT_COMMENTS = "select * from `comment` where `parent`=?";			
-	
 
 }
