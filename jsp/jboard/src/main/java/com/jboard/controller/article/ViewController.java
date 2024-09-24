@@ -27,15 +27,15 @@ public class ViewController extends HttpServlet{
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String no = req.getParameter("no");
+		String ano = req.getParameter("ano");
 		
-		articleService.veiwArticle(no); // 조회수 증가
+		articleService.veiwArticle(ano); // 조회수 증가
 		
 		// 게시글 조회
-		ArticleDTO article = articleService.selectArticle(no);
+		ArticleDTO article = articleService.selectArticle(ano);
 		
 		// 댓글 조회
-		List<CommentDTO> comments = commentService.selectComments(no);
+		List<CommentDTO> comments = commentService.selectComments(ano);
 		
 		// 공유 참조
 		req.setAttribute("article", article);

@@ -30,20 +30,20 @@ public class WriteController extends HttpServlet{
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String parent = req.getParameter("parent");
+		String ano = req.getParameter("ano");
 		String content = req.getParameter("content");
 		String writer = req.getParameter("writer");
 		String regip = req.getLocalAddr();
 		
 		CommentDTO dto = new CommentDTO();
-		dto.setParent(parent);
+		dto.setAno(ano);
 		dto.setContent(content);
 		dto.setWriter(writer);
 		dto.setRegip(regip);
 		
 		// 댓글 등록
 		int pk = commentService.insertComment(dto);
-		commentService.countComments(parent);
+		commentService.countComments(ano);
 		
 		// 방금 등록한 댓글 조회
 		CommentDTO comment = commentService.selectComment(pk);

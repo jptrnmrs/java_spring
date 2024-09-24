@@ -3,7 +3,7 @@ package com.jboard.dto;
 import java.util.List;
 
 public class ArticleDTO {
-	private int no;
+	private int ano;
 	private String cate;
 	private String title;
 	private String content;
@@ -39,15 +39,15 @@ public class ArticleDTO {
 	}
 	@Override
 	public String toString() {
-		return "ArticleDTO [no=" + no + ", cate=" + cate + ", title=" + title + ", content=" + content + ", comment="
+		return "ArticleDTO [ano=" + ano + ", cate=" + cate + ", title=" + title + ", content=" + content + ", comment="
 				+ comment + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", regip=" + regip + ", rdate="
 				+ rdate + "]";
 	}
-	public int getNo() {
-		return no;
+	public int getAno() {
+		return ano;
 	}
-	public void setNo(int no) {
-		this.no = no;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 	public String getCate() {
 		return cate;

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
-<%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
+<%@ taglib prefix="fn" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,11 +41,11 @@
     					textareaEditMode(true);
 				    }else{
 				    	// 수정완료
-	    				const no = commentModify.dataset.no;
+	    				const cno = commentModify.dataset.cno;
 	    				const comment = textarea.value;
 	    				
 	    				const formData = new FormData();
-	    				formData.append("no", no);
+	    				formData.append("cno", cno);
 	    				formData.append("comment", comment);
 	    				
 	    				fetch('/jboard/comment/modify.do', {
@@ -100,10 +100,10 @@
 						}
 						const info = document.getElementById('articleInfo');
 						const article = e.target.closest('article');
-						const no = e.target.dataset.no;
-						const parent = e.target.dataset.parent;
+						const cno = e.target.dataset.cno;
+						const ano = e.target.dataset.ano;
 						
-						fetch('/jboard/comment/delete.do?no='+no+'&parent='+parent)
+						fetch('/jboard/comment/delete.do?cno='+cno+'&ano='+ano)
 							.then(resp=>resp.json)
 							.then(data=>{
 								console.log(data);
@@ -133,7 +133,7 @@
 			commentForm.onsubmit = function(e){
 				e.preventDefault();
 				
-				const parent = commentForm.parent.value;
+				const ano = commentForm.ano.value;
 				const writer = commentForm.writer.value;
 				const content = commentForm.comment.value;
 				
@@ -175,9 +175,9 @@
 														</span>
 														<textarea name='comment' readonly>\${data.content}</textarea>
 														<div>
-								                            <a href="#" class="commentCancel" data-no="${comment.no}" data-parent="${article.no}">취소</a>
-								                            <a href="#" class="commentModify" data-no="${comment.no}" data-parent="${article.no}">수정</a>
-															<a href="#" class="commentRemove" data-no="${comment.no}" data-parent="${article.no}">삭제</a>
+								                            <a href="#" class="commentCancel" data-cno="${comment.cno}" data-ano="${article.ano}">취소</a>
+								                            <a href="#" class="commentModify" data-cno="${comment.cno}" data-ano="${article.ano}">수정</a>
+															<a href="#" class="commentRemove" data-cno="${comment.cno}" data-ano="${article.ano}">삭제</a>
 														</div>
 													</article>`;
 												
@@ -250,9 +250,9 @@
 
 							<c:if test="${sessUser.uid eq comment.writer}">
 								<div>
-									<a href="#" class="commentCancel" data-no="${comment.no}" data-parent="${article.no}">취소</a>
-									<a href="#" class="commentModify" data-no="${comment.no}" data-parent="${article.no}">수정</a>
-									<a href="#" class="commentRemove" data-no="${comment.no}" data-parent="${article.no}">삭제</a>
+									<a href="#" class="commentCancel" data-cno="${comment.cno}" data-ano="${article.ano}">취소</a>
+									<a href="#" class="commentModify" data-cno="${comment.cno}" data-ano="${article.ano}">수정</a>
+									<a href="#" class="commentRemove" data-cno="${comment.cno}" data-ano="${article.ano}">삭제</a>
 								</div>
 							</c:if>
 						</article>
@@ -266,12 +266,12 @@
 				<section class="commentForm">
 					<h3>댓글쓰기</h3>
 					<form name="commentForm">
-						<input type="hidden" name="parent" value="${article.no}" /> <input
-							type="hidden" name="writer" value="${sessUser.uid}" />
+						<input type="hidden" name="ano" value="${article.ano}" />
+						<input type="hidden" name="writer" value="${sessUser.uid}" />
 						<textarea name="comment"></textarea>
 						<div>
-							<a href="#" class="btnCancel">취소</a> <input type="submit"
-								class="btnWrite" value="작성완료" />
+							<a href="#" class="btnCancel">취소</a>
+							<input type="submit" class="btnWrite" value="작성완료" />
 						</div>
 					</form>
 				</section>

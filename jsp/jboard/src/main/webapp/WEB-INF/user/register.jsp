@@ -96,7 +96,7 @@
 				<tr>
 					<td>휴대폰</td>
 					<td><input type="text" name="hp" placeholder="- 포함 13자리 입력"
-						minlength="13" maxlength="13" required/> <span class="resultHp"></td>
+						minlength="13" maxlength="13" required/> <span class="resultHp"></span></td>
 				</tr>
 				<tr>
 					<td>주소</td>

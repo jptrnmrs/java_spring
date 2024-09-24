@@ -5,14 +5,12 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.tomcat.jakartaee.commons.compress.utils.BoundedArchiveInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

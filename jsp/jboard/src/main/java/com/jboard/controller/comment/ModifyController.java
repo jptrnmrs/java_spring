@@ -30,7 +30,7 @@ public class ModifyController extends HttpServlet{
 		String comment = req.getParameter("comment");
 		
 		CommentDTO dto = new CommentDTO();
-		dto.setNo(no);
+		dto.setCno(no);
 		dto.setContent(comment);
 	
 		logger.debug("modi : "+dto);

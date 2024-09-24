@@ -20,11 +20,11 @@ public class ArticleDAO extends DBHelper{
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	public void veiwArticle(int no) {
+	public void veiwArticle(int ano) {
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.VIEW_ARTICLE);
-			psmt.setInt(1, no);
+			psmt.setInt(1, ano);
 			psmt.executeUpdate();
 		} catch (Exception e) {
 			logger.error(e.getMessage());
@@ -33,7 +33,7 @@ public class ArticleDAO extends DBHelper{
 		}
 	}
 	public int insertArticle(ArticleDTO article) {
-		int no = 0;
+		int ano = 0;
 		try {
 			conn = getConnection();
 			
@@ -48,7 +48,7 @@ public class ArticleDAO extends DBHelper{
 			psmt.executeUpdate();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(SQL.SELECT_MAX_NO);
-			if(rs.next()) no = rs.getInt(1);
+			if(rs.next()) ano = rs.getInt(1);
 			
 			conn.commit();
 			
@@ -63,7 +63,7 @@ public class ArticleDAO extends DBHelper{
 		} finally {
 			closeAll();
 		}
-		return no;
+		return ano;
 	}
 	public int selectCountTotal() {
 		int total = 0;
@@ -79,20 +79,20 @@ public class ArticleDAO extends DBHelper{
 		}
 		return total;
 	}
-	public ArticleDTO selectArticle(int no) {
+	public ArticleDTO selectArticle(int ano) {
 		ArticleDTO article = null;
 		List<FileDTO> files = new ArrayList<FileDTO>();
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.SELECT_ARTICLE);
-			psmt.setInt(1, no);
+			psmt.setInt(1, ano);
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
 				
 				if(article==null) {
 					article = new ArticleDTO();
-					article.setNo(rs.getInt(1));
+					article.setAno(rs.getInt(1));
 					article.setCate(rs.getString(2));
 					article.setTitle(rs.getString(3));
 					article.setContent(rs.getString(4));
@@ -131,7 +131,7 @@ public class ArticleDAO extends DBHelper{
 			
 			while(rs.next()) {
 				ArticleDTO dto = new ArticleDTO();
-				dto.setNo(rs.getInt(1));
+				dto.setAno(rs.getInt(1));
 				dto.setCate(rs.getString(2));
 				dto.setTitle(rs.getString(3));
 				dto.setContent(rs.getString(4));
@@ -139,10 +139,9 @@ public class ArticleDAO extends DBHelper{
 				dto.setFile(rs.getInt(6));
 				dto.setHit(rs.getInt(7));
 				dto.setWriter(rs.getString(8));
-				dto.setRegip(rs.getString(9));
-				dto.setRdateSubstring(rs.getString(10));
+				dto.setRdateSubstring(rs.getString(9));
+				dto.setRegip(rs.getString(10));
 				dto.setWriterNick(rs.getString(11));
-				dto.setArticleNo(rs.getInt(12));
 				articles.add(dto);
 			}
 			
@@ -154,13 +153,13 @@ public class ArticleDAO extends DBHelper{
 		
 		return articles;
 	}
-	public void updateCommentArticle(int comm, int no) {	
+	public void updateCommentArticle(int comm, int ano) {	
 		try {
 			conn = getConnection();
 			
 			psmt = conn.prepareStatement(SQL.COMMENT_ARTICLE);
 			psmt.setInt(1, comm);
-			psmt.setInt(2, no);
+			psmt.setInt(2, ano);
 			psmt.executeUpdate();
 			
 			closeAll();

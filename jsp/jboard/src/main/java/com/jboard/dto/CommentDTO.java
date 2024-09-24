@@ -1,8 +1,8 @@
 package com.jboard.dto;
 
 public class CommentDTO {
-	private int no;
-	private int parent;
+	private int cno;
+	private int ano;
 	private String content;
 	private String writer;
 	private String regip;
@@ -10,62 +10,77 @@ public class CommentDTO {
 	
 	//추가필드
 	private String nick;
-	
-	public String getNick() {
-		return nick;
+
+	public int getCno() {
+		return cno;
 	}
-	public void setNick(String nick) {
-		this.nick = nick;
+
+	public void setCno(int cno) {
+		this.cno = cno;
 	}
-	public int getNo() {
-		return no;
+	public void setCno(String cno) {
+		this.cno = Integer.parseInt(cno);
 	}
-	public void setNo(int no) {
-		this.no = no;
+
+	public int getAno() {
+		return ano;
 	}
-	public void setNo(String no) {
-		this.no = Integer.parseInt(no);
+	public void setAno(String ano) {
+		this.ano = Integer.parseInt(ano);
 	}
-	public int getParent() {
-		return parent;
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
-	public void setParent(int parent) {
-		this.parent = parent;
-	}
-	public void setParent(String parent) {
-		this.parent = Integer.parseInt(parent);
-	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
+
 	public String getWriter() {
 		return writer;
 	}
+
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
+
 	public String getRegip() {
 		return regip;
 	}
+
 	public void setRegip(String regip) {
 		this.regip = regip;
 	}
+
 	public String getRdate() {
 		return rdate;
 	}
+
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
 	}
 	public void setRdateSubstring(String rdate) {
-		this.rdate = rdate.substring(0, 10);
+		this.rdate = rdate.substring(2, 10);
 	}
+
+	public String getNick() {
+		return nick;
+	}
+
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+
 	@Override
 	public String toString() {
-		return "CommentDTO [no=" + no + ", parent=" + parent + ", content=" + content + ", writer=" + writer
-				+ ", regip=" + regip + ", rdate=" + rdate + "]";
+		return "CommentDTO [cno=" + cno + ", ano=" + ano + ", content=" + content + ", writer=" + writer + ", regip="
+				+ regip + ", rdate=" + rdate + ", nick=" + nick + "]";
 	}
+	
+	
 	
 }

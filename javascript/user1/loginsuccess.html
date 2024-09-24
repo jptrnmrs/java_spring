@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script>
+        window.onload = function(){
+            const main = document.getElementsByTagName('p')[0];
+            // 서버로 토큰 전송
+            const accessToken = localStorage.getItem('accessToken');
+            
+            fetch('http://127.0.0.1:8080/ch10/user', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
+                }
+            })
+            .then(resp => resp.json())
+            .then(data =>{
+                console.log(data);
+                const into = `
+                아이디 : ${data.username}<br>
+                이름 : ${data.name}<br>
+                생년월일 : ${data.birth}<br>
+                가입일 : ${data.rdate}<br>
+                role : ${data.role}<br>
+                `
+                main.insertAdjacentHTML('afterbegin',into);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+
+            const logout = document.getElementById('logout');
+            logout.onclick = function(){
+                localStorage.removeItem('accessToken');
+                localStorage.removeItem('refreshToken');
+                location.href="./login.html"
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+    <p>
+        <a href="#" id="logout">로그아웃</a>
+    </p>
+</body>
+</html>

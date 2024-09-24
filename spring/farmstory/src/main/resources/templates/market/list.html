@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>market/list.html</title>
+
+    <style>
+    
+    * {
+            margin: 0;
+            padding: 0;
+            font: normal 12px '고딕';
+        }
+        ul, ol {list-style: none;}
+        a {text-decoration: none; color: #111;}
+        input, textarea {outline: none;}
+        
+        #wrapper {
+        position: relative;
+        width: 1920px;
+        height: 1214px;
+                
+        background: #FFFFFF;
+
+        margin: 0 auto;
+
+        }
+
+        /***********/
+        /* header */
+        header{
+            width: 980px;
+            height: 150px;
+            margin : 0 auto;
+        }
+
+        /*top line*/
+        header .htop{
+            position: absolute;
+            width: 980px;
+            height: 14px;
+            top: 1px;
+            background-repeat: repeat;
+            height: 10px;
+            background-image: url('./img/head_top_line.png')
+        }
+        
+        /*logospace 는 로고, 사이드로고, 로그인| 담고있음*/
+        .logospace {
+            width : 980px;
+            height : 80px;
+            position : relative;
+        } 
+
+        .logospace > p{
+            position : absolute;
+            height: 14px;
+            right : 0;
+            left: 787.45px;
+            top: 15px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            color: #111111;
+        }
+        .logospace > p{
+            position: absolute;
+            width: 237.15px;
+        }
+
+        .headlog {
+            position : absolute;
+            left : 40%;
+            top : 15px;
+        }
+        .headlog2 {
+            position : absolute;
+            right : 0px;
+            top : 45px;
+        }
+
+        /**nav**/
+        header nav {
+            width : 100%;
+            height : 50px;
+            position :relative;
+        }
+        .navfont> li a {
+            font-size :15px;
+            font-weight: bolder;
+        }
+       header nav > ul {
+            width :100%;
+            height : 50px;
+            display: inline-block;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        
+       header nav > ul > li {
+        margin-left : 5px;
+        float : left;
+        min-width : 190px;
+        height: 30px;
+        margin-top :5px;
+        border-top: 5px solid rgb(145, 142, 142);
+        /*안의 글자 a들을 중앙으로 배치하는 방법*/
+        position : flex;
+        text-align: center;
+        }
+        /*장보기 뱃지*/
+        .badge {
+            position : absolute;
+            margin-top :-10px;
+            margin-left  : 310px;
+        }
+
+        .subtopbg1{
+            position: absolute;
+            width: 980px;
+            height: 184px;
+            left: 470px;
+            right: 470px;
+            top: 145px;
+
+            background: url(.jpg);
+
+
+        }
+        .subtopbg1 .subtoptit1{
+            position: absolute;
+            width: 326px;
+            height: 37px;
+            left: 10px;
+            bottom: 10px;
+                    
+            background: url(.png);
+
+        }
+
+
+        main {
+            position: absolute;
+            width: 980px;
+            height: 920.75px;
+            left: 470px;
+            right: 470px;
+            top: 326px;
+        }
+        main > aside{
+            position: absolute;
+            width: 176px;
+            height: 650px;
+            left: 0px;
+            top: 0px;
+
+            background: url(.png);
+
+        }
+
+        main > #asidesize{
+            position: absolute;
+            width: 176px;
+            height: 650px;
+            left: 470px;
+            top: 340px;
+
+            background: url(.png);
+            
+        }
+        
+        .asidegate1{
+            position: absolute;
+            width: 129px;
+            height: 44px;
+            left: 16px;
+            top: 16px;
+
+            background: url(.png);
+
+
+        }
+
+        main #asidesize .asidebgline{
+            position: relative;
+            top: 37px;
+            float: right;
+            
+        }
+
+        .asidelnb{
+            position: absolute;
+            width: 175px;
+            height: 233px;
+            left: 0px;
+            top: 81px;
+
+            background: url('img/sub_aside_bg_lnb.png');
+
+        }
+
+        .asidelnb .lnb1{
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 26px;
+            bottom: 178px;
+
+            background: url(.png);
+
+
+        }
+        .asidelnb .lnb2{
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 61px;
+            bottom: 143px;
+
+            background: url(.png);
+
+
+        }
+        .asidelnb .lnb3{
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 96px;
+            bottom: 108px;
+
+            background: url(.png);
+
+        }
+
+
+        .hello{
+            position: absolute;
+            width: 802px;
+            height: 758px;
+            left: 176px;
+            top: 0px;
+
+        }
+
+        .hello > article > nav{
+            box-sizing: border-box;
+            position: absolute;
+            width: 762px;
+            height: 72px;
+            left: 40px;
+            right: 0px;
+            top: 0px;
+
+            border-bottom: 1px solid #C2C2C2;
+
+        }
+        .hello > article > nav .navtit1{
+            position: absolute;
+            width: 69px;
+            height: 24px;
+            left: 0px;
+            bottom: 5px;
+
+            background: url(.png);
+
+        }
+        .hello > article > nav .smallhello{
+            position: absolute;
+            height: 17px;
+            left: 75.21%;
+            right: 0%;
+            bottom: 5px;
+            white-space: nowrap;
+       
+        }
+       
+
+        .hello > article > nav .smallhello .smallhello2{
+            position: absolute;
+            height: 14px;
+            height: 14px;
+            left: 42px;
+            top: 1px;
+
+            font-family: Arial, Helvetica, sans-serif; /* 폰트 패밀리 */
+            font-style: normal; /* 폰트 스타일 */
+            font-weight: 400; /* 폰트 굵기 */
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+
+            color: #8C8C8C;
+
+
+
+        }
+        .hello > article > nav .smallhello .smallhello2 > div{
+            position: relative;
+            right: 3px;
+            bottom: 2px;
+
+        }
+        .hello > article > nav .smallhello .smallhello2 .highlight{
+            position: relative;
+            bottom: 1.5px;
+            font-weight: bold;
+            color: #91BA15;
+            
+        }
+        .hello > article > a {
+            position: absolute;
+            width: 141.42px;
+            height: 14px;
+            left: 40px;
+            top: 113px;
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.8125px;
+            line-height: 14px;
+            display: flex;
+            align-items: center;
+                    
+            color: #777777;
+            white-space: nowrap;
+        }
+        .hello > article > a .highlight2{
+            color: #111111;
+
+        }
+        
+        .hello > article .cart{
+            box-sizing: border-box;
+
+            position: absolute;
+            height: 564px;
+            left: 40px;
+            right: 0px;
+            top: 139px;
+
+            border-width: 1px 0px;
+            border-style: solid;
+            border-color: #111111;
+            overflow: hidden;
+        }
+
+        .hello > article .cart > .carthead{
+            box-sizing: border-box;
+                    
+            position: absolute;
+            width: 762px;
+            height: 38px;
+            left: 0px;
+            top: calc(50% - 38px/2 - 262.5px);
+                    
+            border-bottom: 1px solid #EEEEEE;
+
+        }
+        .hello > article .cart > .cartbody{
+            position: absolute;
+            width: 762px;
+            height: 525px;
+            left: 0px;
+            top: calc(50% - 525px/2 + 19px);
+
+            
+        }
+
+        .hello > article .cart > .carthead > li:nth-child(1){
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 100px;
+            height: 38px;
+            left: 0px;
+            top: calc(50% - 38px/2);
+
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+
+        }
+
+        .hello > article .cart > .carthead > li:nth-child(1) .image{
+            position: absolute;
+            width: 36.2px;
+            height: 14px;
+            left: 32px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(2){
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 76.19px;
+            height: 38px;
+            left: 100px;
+            top: calc(50% - 38px/2);
+
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(2) .kind{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 26.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(3){
+
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 311.5px;
+            height: 38px;
+            left: 176.19px;
+            top: calc(50% - 38px/2);
+
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(3) .Productname{
+            position: absolute;
+            width: 36.2px;
+            height: 14px;
+            left: 137.75px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(4){
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 91.44px;
+            height: 38px;
+            left: 487.69px;
+            top: calc(50% - 38px/2);
+
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(4) .discount{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 33.72px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+        }
+        .hello > article .cart > .carthead > li:nth-child(5){
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 91.44px;
+            height: 38px;
+            left: 579.13px;
+            top: calc(50% - 38px/2);
+
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(5) .point{
+            position: absolute;
+            width: 36.2px;
+            height: 14px;
+            left: 27.71px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(6){
+            box-sizing: border-box;
+                    
+            position: absolute;
+            width: 91.44px;
+            height: 38px;
+            left: 670.56px;
+            top: calc(50% - 38px/2);
+                    
+            background: #E5ECEF;
+            border-bottom: 1px solid #D1DEE2;
+
+
+
+        }
+        .hello > article .cart > .carthead > li:nth-child(6) .price{
+            position: absolute;
+            width: 48.2px;
+            height: 14px;
+            left: 21.72px;
+            top: calc(50% - 14px/2 - 0.5px);
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+                    
+            color: #000000;
+
+        }
+        
+
+
+        .hello > article .cart .cartbody2{
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 762px;
+            height: 105px;
+            left: 0px;
+            top: calc(50% - 105px/2 - 210px);
+
+            border-bottom: 1px solid #EEEEEE;
+
+        }
+
+        .hello > article .cart .cartbody2 >.image1{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10.5px;
+
+            background: url(.jpg);
+                    
+        }
+        .hello > article .cart .cartbody2 > .kind1{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 126.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody2 > .Productname1{
+            position: absolute;
+            width: 51.2px;
+            height: 14px;
+            left: 186.19px;
+            top: 45px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.0625px;
+            line-height: 13px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+
+            color: #111111;
+
+
+        }
+
+        .hello > article .cart .cartbody2 > .discount1{
+            position: absolute;
+            width: 22.2px;
+            height: 14px;
+            left: 522.41px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.625px;
+            line-height: 14px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody2 > .point1{
+            position: absolute;
+            width: 24.89px;
+            height: 14px;
+            left: 612.5px;
+            top: calc(50% - 14px/2 - 0.5px);
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+                    
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody2 > .price1{
+            position: absolute;
+            height: 105px;
+            left: 88%;
+            right: 0%;
+            top: calc(50% - 105px/2);
+    
+        }
+
+        .hello > article .cart .cartbody2 > .price1 > div:nth-child(1){
+            position: absolute;
+            width: 39px;
+            height: 14px;
+            left: 11.22px;
+            top: 36.5px;
+
+        }
+        .hello > article .cart .cartbody2 > .price1 > div:nth-child(1) .price1_1{
+            position: absolute;
+            width: 39.2px;
+            height: 14px;
+            left: 0px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10.125px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody2 > .price1 > div:nth-child(2){
+            position: absolute;
+            width: 40.5px;
+            height: 31px;
+            left: 39.72px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody2 > .price1 > div:nth-child(2) .price1_2{
+            position: absolute;
+            width: 27.2px;
+            height: 14px;
+            left: 13.5px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody2 > .price1 > div:nth-child(2) > p{
+            position: absolute;
+            width: 12.2px;
+            height: 14px;
+            left: 0px;
+            top: 17px;
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+                    
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody3{
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 762px;
+            height: 105px;
+            left: 0px;
+            top: calc(50% - 105px/2 - 105px);
+
+            border-bottom: 1px solid #EEEEEE;
+
+        }
+        
+        .hello > article .cart .cartbody3 >.image2{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10.5px;
+
+            background: url(.jpg);
+                    
+        }
+        .hello > article .cart .cartbody3 > .kind2{
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 126.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody3 > .Productname2{
+            position: absolute;
+            width: 87.2px;
+            height: 14px;
+            left: 186.19px;
+            top: 45px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+
+            color: #111111;
+
+        }
+
+        .hello > article .cart .cartbody3 > .discount2{
+            position: absolute;
+            width: 22.2px;
+            height: 14px;
+            left: 522.41px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.625px;
+            line-height: 14px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+                    
+        }
+        .hello > article .cart .cartbody3 > .point2{
+            position: absolute;
+            width: 24.89px;
+            height: 14px;
+            left: 612.5px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+
+
+        }
+        .hello > article .cart .cartbody3 > .price2{
+
+            position: absolute;
+            height: 105px;
+            left: 88%;
+            right: 0%;
+            top: calc(50% - 105px/2);
+ 
+        }
+
+
+        .hello > article .cart .cartbody3 > .price2 > div:nth-child(1){
+            position: absolute;
+            width: 39px;
+            height: 14px;
+            left: 11.22px;
+            top: 36.5px;
+
+        }
+        .hello > article .cart .cartbody3 > .price2 > div:nth-child(1) .price2_1{
+            position: absolute;
+            width: 39.2px;
+            height: 14px;
+            left: 0px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10.125px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody3 > .price2 > div:nth-child(2){
+            position: absolute;
+            width: 40.5px;
+            height: 31px;
+            left: 39.72px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody3 > .price2 > div:nth-child(2) .price2_2{
+            position: absolute;
+            width: 27.2px;
+            height: 14px;
+            left: 13.5px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+
+        }
+        .hello > article .cart .cartbody3 > .price2 > div:nth-child(2) > p{
+
+            position: absolute;
+            width: 12.2px;
+            height: 14px;
+            left: 0px;
+            top: 17px;
+                    
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+                    
+            color: #777777;
+
+
+        }
+
+          .hello > article .cart .cartbody4{
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 762px;
+            height: 105px;
+            left: 0px;
+            top: calc(50% - 105px/2);
+
+            border-bottom: 1px solid #EEEEEE;
+                  
+        }
+        
+
+        .hello > article .cart .cartbody4 >.image3{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10.5px;
+
+            background: url(.jpg);
+
+        }
+        .hello > article .cart .cartbody4 > .kind3{
+
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 126.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody4 > .Productname3{
+            position: absolute;
+            width: 63.2px;
+            height: 14px;
+            left: 186.19px;
+            top: 45px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+
+            color: #111111;
+
+        }
+
+        .hello > article .cart .cartbody4 > .discount3{
+            position: absolute;
+            width: 22.2px;
+            height: 14px;
+            left: 522.41px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.625px;
+            line-height: 14px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody4 > .point3{
+            position: absolute;
+            width: 24.89px;
+            height: 14px;
+            left: 612.5px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody4 > .price3{
+
+            position: absolute;
+            height: 105px;
+            left: 88%;
+            right: 0%;
+            top: calc(50% - 105px/2);
+     
+        }
+
+        .hello > article .cart .cartbody4 > .price3 > div:nth-child(1){
+
+            position: absolute;
+            width: 39px;
+            height: 14px;
+            left: 11.22px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody4 > .price3 > div:nth-child(1) .price3_1{
+            position: absolute;
+            width: 39.2px;
+            height: 14px;
+            left: 0px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10.125px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody4 > .price3 > div:nth-child(2){
+            position: absolute;
+            width: 40.5px;
+            height: 31px;
+            left: 39.72px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody4 > .price3 > div:nth-child(2) .price3_2{
+
+            position: absolute;
+            width: 27.2px;
+            height: 14px;
+            left: 13.5px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody4 > .price3 > div:nth-child(2) > p{
+            position: absolute;
+            width: 12.2px;
+            height: 14px;
+            left: 0px;
+            top: 17px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+
+        .hello > article .cart .cartbody5 {
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 762px;
+            height: 105px;
+            left: 0px;
+            top: calc(50% - 105px/2 + 105px);
+
+            border-bottom: 1px solid #EEEEEE;
+
+        }
+        
+        .hello > article .cart .cartbody5 >.image4{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10.5px;
+
+            background: url(.jpg);
+
+        }
+        .hello > article .cart .cartbody5 > .kind4{
+
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 126.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody5 > .Productname4{
+            position: absolute;
+            width: 63.2px;
+            height: 14px;
+            left: 186.19px;
+            top: 45px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+
+            color: #111111;
+
+        }
+
+        .hello > article .cart .cartbody5 > .discount4{
+            position: absolute;
+            width: 22.2px;
+            height: 14px;
+            left: 522.41px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.625px;
+            line-height: 14px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody5 > .point4{
+            position: absolute;
+            width: 24.89px;
+            height: 14px;
+            left: 612.5px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody5 > .price4{
+
+            position: absolute;
+            height: 105px;
+            left: 88%;
+            right: 0%;
+            top: calc(50% - 105px/2);
+     
+        }
+
+        .hello > article .cart .cartbody5 > .price4 > div:nth-child(1){
+
+            position: absolute;
+            width: 39px;
+            height: 14px;
+            left: 11.22px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody5 > .price4 > div:nth-child(1) .price4_1{
+            position: absolute;
+            width: 39.2px;
+            height: 14px;
+            left: 0px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10.125px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody5 > .price4 > div:nth-child(2){
+            position: absolute;
+            width: 40.5px;
+            height: 31px;
+            left: 39.72px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody5 > .price4 > div:nth-child(2) .price4_2{
+
+            position: absolute;
+            width: 27.2px;
+            height: 14px;
+            left: 13.5px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody5 > .price4 > div:nth-child(2) > p{
+            position: absolute;
+            width: 12.2px;
+            height: 14px;
+            left: 0px;
+            top: 17px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody6 {
+            box-sizing: border-box;
+
+            position: absolute;
+            width: 762px;
+            height: 105px;
+            left: 0px;
+            top: calc(50% - 105px/2 + 210px);
+
+            border-bottom: 1px solid #EEEEEE;
+
+        }
+        .hello > article .cart .cartbody6 >.image5{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10.5px;
+
+            background: url(.jpg);
+
+        }
+        .hello > article .cart .cartbody6 > .kind5{
+
+            position: absolute;
+            width: 24.2px;
+            height: 14px;
+            left: 126.09px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody6 > .Productname5{
+            position: absolute;
+            width: 63.2px;
+            height: 14px;
+            left: 186.19px;
+            top: 45px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+
+            color: #111111;
+
+        }
+
+        .hello > article .cart .cartbody6 > .discount5{
+            position: absolute;
+            width: 22.2px;
+            height: 14px;
+            left: 522.41px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11.625px;
+            line-height: 14px;
+            /* identical to box height */
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody6 > .point5{
+            position: absolute;
+            width: 24.89px;
+            height: 14px;
+            left: 612.5px;
+            top: calc(50% - 14px/2 - 0.5px);
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody6 > .price5{
+
+            position: absolute;
+            height: 105px;
+            left: 88%;
+            right: 0%;
+            top: calc(50% - 105px/2);
+     
+        }
+
+        .hello > article .cart .cartbody6 > .price5 > div:nth-child(1){
+
+            position: absolute;
+            width: 39px;
+            height: 14px;
+            left: 11.22px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody6 > .price5 > div:nth-child(1) .price5_1{
+            position: absolute;
+            width: 39.2px;
+            height: 14px;
+            left: 0px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10.125px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #111111;
+
+        }
+        .hello > article .cart .cartbody6 > .price5 > div:nth-child(2){
+            position: absolute;
+            width: 40.5px;
+            height: 31px;
+            left: 39.72px;
+            top: 36.5px;
+        }
+        .hello > article .cart .cartbody6 > .price5 > div:nth-child(2) .price5_2{
+
+            position: absolute;
+            width: 27.2px;
+            height: 14px;
+            left: 13.5px;
+            top: 0px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 9.75px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .cart .cartbody6 > .price5 > div:nth-child(2) > p{
+            position: absolute;
+            width: 12.2px;
+            height: 14px;
+            left: 0px;
+            top: 17px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration-line: line-through;
+
+            color: #777777;
+
+        }
+        .hello > article .next{
+            position: absolute;
+            width: 101.76px;
+            height: 14px;
+            left: calc(50% - 101.76px/2 + 20.1px);
+            top: 723px;
+
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10.5px;
+            line-height: 13px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #999999;
+            
+
+        }
+
+        .hello > article .next .highlight3{
+            color: #111111;
+
+        }
+
+
+
+
+
+        footer {
+            box-sizing: border-box;
+            position: absolute;
+            margin : 0 auto;
+            width: 980px;
+            height: 130px;
+            left: 470px;
+            right: 470px;
+            top: 1084px;
+           
+        } 
+
+
+
+        footer > div {
+            float :right;
+            width :100%;
+            height : 120px;
+            
+        }
+
+    /*footer topline*/
+      footer .fline{
+        position: relative;
+        width: 980px;
+        background-repeat: repeat;
+        height: 10px;
+        background: url('./img/footer_top_line.png');
+      }
+      /*info3개 들음*/
+      #Paragraph {
+        float : right;
+        margin-top:10px;
+        position: relative;
+        height: 95px;
+        width : 75%;
+        overflow : hidden;
+       }
+        .info1{
+
+        position: absolute;
+        left : 0;
+        top : 0;
+         width: 709.68px;
+         height: 54px;
+         font-family: 'Inter', sans-serif;
+         font-style: normal;
+         font-weight: 300;
+         font-size: 10.6562px;
+         line-height: 18px;
+         display: flex;
+         align-items: center;
+         color: #585858;
+        }
+    
+         footer > div .info2{
+            position: absolute;
+            left : 0;
+            bottom : 25px;
+        width: 275.5px;
+        height: 14px;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11.25px;
+        line-height: 14px;
+        display: flex;
+        align-items: center;
+        color: #888888;
+    }
+        footer > div .info3{
+            position: absolute;
+            right : 5px;
+            bottom : 0;
+        width: 89.18px;
+        height: 14px;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10.6875px;
+        line-height: 13px;
+        display: flex;
+        align-items: center;
+        color: #888888;
+    }
+</style>
+
+  
+</head>
+<body>
+    <div id = "wrapper">
+    <header>
+        <div>
+            <div class="htop"></div>
+            <div class="top">
+               
+            </div>
+            <div class ="logospace">
+                <a href="#" class="logo"> <img src="./img/logo.png" alt="logo" class = "headlog"></a>
+                <a href="#" class="sale"><img src="./img/head_txt_img.png" alt="htxt" class = "headlog2"></a>
+                <p>
+                    <a href="#">HOME | </a>
+                    <a href="#">로그인 | </a>
+                    <a href="#"> 회원가입 | </a>
+                    <a href="#"> 고객센터 </a>
+                </p>
+            </div>
+        </div>
+        <div>
+            <nav>
+                <ul class = "navfont">
+            <div><img src="./img/head_menu_badge.png" class = "badge"></div>          
+                 
+                    <li><a href="#">팜스토리소개</a></li>
+                    <li><a href="#">장보기</a></li>
+                    <li><a href="#">농작물이야기</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="subtopbg1">
+        <img src="./img/sub_top_bg.jpg" alt="subtopbg1">
+        <div class="subtoptit1"><img src="./img/sub_top_tit2.png" alt="subtoptit1"></div>
+    </div>
+   
+    <main>
+        <div class="hello">
+            <article>
+                <nav>
+                    <img src="./img/sub_nav_tit_cate2_tit1.png" class="navtit1" alt="">
+                    <div class="smallhello">                
+                        <div class="smallhello2">
+                            <div><img src="/img/sub_page_nav_ico.gif" alt=""></div> 
+                          HOME > 장보기 >&nbsp;<span class="highlight">장보기</span>
+                       </div>
+                    </div>
+                </nav>
+                <a href="#"><span class="highlight2">전체(10)</span>&nbsp;| 과일 | 야채 | 곡류</a>
+                <section class="cart">
+                    <ul class="carthead">
+                        <li><p class="image">이미지</p></li>
+                        <li><p class="kind">종류</p></li>
+                        <li><p class="Productname">상품명</p></li>
+                        <li><p class="discount">할인</p></li>
+                        <li><p class="point">포인트</p></li>
+                        <li><p class="price">판매가격</p></li>
+                    </ul>
+                    <div class="cartbody">
+                        <div class="cartbody2">
+                            <img src="./img/market_item1.jpg" class="image1" alt="">
+                            <p class="kind1">과일</p>
+                            <p class="Productname1">사과 500g</p>
+                            <p class="discount1">10%</p>
+                            <p class="point1">400p</p>
+                            <div class="price1">
+                                <div><p class="price1_1">3,600원</p></div>
+                                <div>
+                                    <p class="price1_2">4,000 </p>
+                                    <p>원</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="cartbody3">
+                            <img src="./img/market_item2.jpg" class="image2" alt="">
+                            <p class="kind2">과일</p>
+                            <p class="Productname2">전남 완주 배 5kg</p>
+                            <p class="discount2">10%</p>
+                            <p class="point2">400p</p>
+                            <div class="price2">
+                                <div><p class="price2_1">3,600원</p></div>
+                                <div>
+                                    <p class="price2_2">4,000</p>
+                                    <p>원</p>
+                                </div>    
+                            
+                            </div>
+                        </div>
+                        <div class="cartbody4">
+                            <img src="./img/market_item3.jpg" class="image3" alt="">
+                            <p class="kind3">과일</p>
+                            <p class="Productname3">방울토마토</p>
+                            <p class="discount3">10%</p>
+                            <p class="point3">400p</p>
+                            <div class="price3">
+                                <div><p class="price3_1">3,600원</p></div>
+                                <div>
+                                    <p class="price3_2">4,000</p>
+                                    <p>원</p>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="cartbody5">
+                            <img src="./img/market_item6.jpg" class="image4" >
+                            <p class="kind4">곡류</p>
+                            <p class="Productname4">무농약 현미</p>
+                            <p class="discount4">10%</p>
+                            <p class="point4">400p</p>
+                            <div class="price4">
+                                <div><p class="price4_1">3,600원</p></div>
+                                <div>
+                                    <p class="price4_2">4,000</p>
+                                    <p>원</p>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="cartbody6">
+                            <img src="./img/market_item7.jpg" class="image5" alt="">
+                            <p class="kind5">야채</p>
+                            <p class="Productname5">팜스토리 하루야채 샐러드</p>
+                            <p class="discount5">10%</p>
+                            <p class="point5">400p</p>
+                            <div class="price5">
+                                <div><p class="price5_1">3,600원</p></div>
+                                <div>
+                                    <p class="price5_2">4,000</p>
+                                    <p>원</p>
+                                </div>    
+                            </div>
+                        </div>          
+                </section>
+                <a href="#" class="next"><&nbsp;<span style="text-decoration: underline;" class="highlight3" >[1]</span>&nbsp;[2] [3] [4] [5] ></a>
+               
+            </div>
+            <aside>
+                <div id="asidesize">
+                    <div class="asidegate1"><img src="./img/sub_aside_cate2_tit.png" alt=""></div>
+                    <div class="asidebgline"><img src="./img/sub_aside_bg_line.png" alt=""></div>
+                <ul class="asidelnb">
+                    <li>
+                        <li class="lnb1"><a href="#"><img id="lnb1" src="./img/sub_cate2_lnb1_ov.png" alt="cate_lnb1"></a></li>
+                    </li>
+                </ul>
+                </div>
+              </aside>
+            </article>
+    </main>
+  
+      <footer>
+          <div>
+              <div class="fline"></div>
+              <img src="./img/footer_logo.png" class="logo" alt="farmstoryfootlogo">
+              <div id="Paragraph">
+                  <p class="info1">
+                      (주)팜스토리 / 사업자등록번호 123-45-67890 / 통신판매업신고 제 2013-부산진구-123호 / 벤처기업확인 서울지방중소기업청 제 012345678-9-01234호
+                      등록번호 팜스토리01234 (2013.04.01) / 발행인 : 홍길동<br>
+                      대표 : 김철학 / 이메일 : chhak0503@gmail.com / 전화 : 01) 234-5678 / 부산광역시 부산진구 부전동 123
+                  </p>
+                  <p class="info2">
+                      copyrightⓒ 김철학(개발에반하다.) All rights reserved.
+                  </p>
+                  <p class="info3">
+                      farmstory ver1.0.1
+                  </p>
+              </div>
+          </div>
+        
+      </footer>
+  </div>
+  </body>
+  </html>
+  

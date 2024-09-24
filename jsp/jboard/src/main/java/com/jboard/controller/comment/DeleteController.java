@@ -26,8 +26,8 @@ public class DeleteController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String no = req.getParameter("no");
-		String parent = req.getParameter("parent");
+		String no = req.getParameter("cno");
+		String parent = req.getParameter("ano");
 		int result = commentService.deleteComment(parent);
 
 

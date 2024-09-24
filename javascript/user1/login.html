@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script>
+        window.onload = function(){
+
+            const form = document.form;
+            form.onsubmit = function(e){
+                e.preventDefault();
+
+                const jsonData = {
+                    "username" : form.uid.value,
+                    "password" : form.pass.value
+                }
+
+                fetch('http://127.0.0.1:8080/ch10/user/login', {
+                    method: 'POST',
+                    headers: {'Content-Type' : 'application/json'},
+                    body: JSON.stringify(jsonData)
+                })
+                    .then(resp => resp.json())
+                    .then(data =>{
+                        console.log(data);
+
+                        // access, refresh 토큰 저장
+                        localStorage.setItem('accessToken',data.accessToken);
+                        localStorage.setItem('refreshToken',data.refreshToken);
+                        // 메인 이동
+                        location.href="./loginsuccess.html";
+                    })
+                    .catch(err =>{
+                        console.error("err : " + err);
+                        alert('일치하는 회원이 없습니다.')
+                    })
+            }
+        }//onload end
+    </script>
+</head>
+<body>
+        <h3>로그인</h3>
+        <form name="form" method="post">
+            <input type="text" name="uid" placeholder="아이디 입력"><br>
+            <input type="password" name="pass" placeholder="비밀번호 입력"><br>
+            <input type="submit" value="로그인">
+        </form>
+</body>
+</html>

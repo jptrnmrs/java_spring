@@ -50,7 +50,7 @@ public class CommentDAO extends DBHelper{
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_COMMENT, Statement.RETURN_GENERATED_KEYS); // INSERT 실행 후 자동 생성되는 PK값을 반환하는 쿼리
-			psmt.setInt(1, comment.getParent());
+			psmt.setInt(1, comment.getAno());
 			psmt.setString(2, comment.getContent());
 			psmt.setString(3, comment.getWriter());
 			psmt.setString(4, comment.getRegip());
@@ -76,8 +76,8 @@ public class CommentDAO extends DBHelper{
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				comment = new CommentDTO();
-				comment.setNo(rs.getInt(1));
-				comment.setParent(rs.getInt(2));
+				comment.setCno(rs.getInt(1));
+				comment.setAno(rs.getInt(2));
 				comment.setContent(rs.getString(3));
 				comment.setWriter(rs.getString(4));
 				comment.setRegip(rs.getString(5));
@@ -100,8 +100,8 @@ public class CommentDAO extends DBHelper{
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				CommentDTO comment = new CommentDTO();
-				comment.setNo(rs.getInt(1));
-				comment.setParent(rs.getInt(2));
+				comment.setCno(rs.getInt(1));
+				comment.setAno(rs.getInt(2));
 				comment.setContent(rs.getString(3));
 				comment.setWriter(rs.getString(4));
 				comment.setRegip(rs.getString(5));
@@ -123,7 +123,7 @@ public class CommentDAO extends DBHelper{
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.UPDATE_COMMENT);
 			psmt.setString(1, comment.getContent());
-			psmt.setInt(2, comment.getNo());
+			psmt.setInt(2, comment.getCno());
 			result = psmt.executeUpdate();
 			
 		} catch (Exception e) {
